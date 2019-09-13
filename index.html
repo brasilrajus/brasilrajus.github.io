@@ -39,6 +39,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
 
 </head>
 
@@ -50,7 +51,39 @@
                 <ion-slide>
                     <div id="login">
 
-                       Em construção
+                        <img id="logo" class="ion-margin-bottom ion-padding-bottom" src="img/rajus.png"
+                            alt="Logo Rajus">
+
+                        <ion-item class="ion-text-center anm_max_height">
+                            <ion-icon name="people" class="border_r ion-padding-end"></ion-icon>
+                            <ion-input type="number" placeholder="Digite seu CPF"></ion-input>
+                        </ion-item>
+
+                        <br>
+
+                        <ion-item class="ion-text-center anm_min_height">
+                            <ion-icon name="key" class="border_r ion-padding-end"></ion-icon>
+                            <ion-input type="password" placeholder="Digite sua senha"></ion-input>
+                        </ion-item>
+
+                        <ion-item lines="none" class="io_no_bg ion-margin-bottom ion-padding-bottom">
+                            <ion-item lines="none" class="io_no_bg">
+                                <ion-checkbox class="ion-margin-end "></ion-checkbox>
+                                <ion-label color=>Continuar conectado</ion-label>
+                            </ion-item>
+                            <ion-label class="ion-text-center">Recuperar senha</ion-label>
+                        </ion-item>
+
+                        <ion-button expand="full" size="large" class="ion-margin-top ion-margin-bottom">Acessar
+                        </ion-button>
+
+                        <ion-button class="ion-margin-top">
+                            <ion-icon name="logo-google" class="ion-margin-end"></ion-icon>
+                            Acessar com Gmail
+                        </ion-button>
+                        <ion-item lines="none" class="io_no_bg">
+                            <span slot="end">Sobre o Rajus</span>
+                        </ion-item>
                     </div>
                 </ion-slide>
             </ion-slides>

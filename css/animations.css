@@ -1,0 +1,28 @@
+@keyframes max_height {
+    from {
+        max-height: 10em;
+    }
+    to {
+        max-height: 0px;
+    }
+}
+@keyframes min_height1 {
+    from {
+        max-height: 0px;
+    }
+    to {
+        max-height: 10em;
+    }
+}
+.anm_max_height {
+    animation-name: max_height;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+.anm_min_height {
+    animation-name: min_height1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
