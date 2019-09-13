@@ -1,6 +1,18 @@
-.io_no_bg {
+body {
+    min-width: 320px;
+}
+ion-item {
     --background: none;
 }
 .border_r {
-    border-right: 1px solid #f00; 
+    border-right: 1px solid #0459A9; 
+}
+.f_width {
+    width: 100%;
+}
+.n_height {
+    height: 0;
+}
+.pointer {
+    cursor: pointer;
 }

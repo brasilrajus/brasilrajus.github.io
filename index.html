@@ -46,48 +46,191 @@
 <body>
 
     <ion-app>
-        <ion-content>
-            <ion-slides>
+        <ion-content class="swiper-no-swiping">
+            <ion-slides id="slides">
+
                 <ion-slide>
                     <div id="login">
 
-                        <img id="logo" class="ion-margin-bottom ion-padding-bottom" src="img/rajus.png"
+                        <img id="logo" class="ion-margin-bottom ion-padding-bottom" src="img/rajus2.svg"
                             alt="Logo Rajus">
 
-                        <ion-item class="ion-text-center anm_max_height">
-                            <ion-icon name="people" class="border_r ion-padding-end"></ion-icon>
-                            <ion-input type="number" placeholder="Digite seu CPF"></ion-input>
+                        <ion-item class="ion-text-center anm_max_height io_bg_item">
+                            <ion-icon name="people" class="border_r ion-padding-end" color="primary"></ion-icon>
+                            <ion-input type="text" placeholder="Digite seu CPF" id="input_cpf"></ion-input>
                         </ion-item>
 
                         <br>
 
-                        <ion-item class="ion-text-center anm_min_height">
-                            <ion-icon name="key" class="border_r ion-padding-end"></ion-icon>
-                            <ion-input type="password" placeholder="Digite sua senha"></ion-input>
+                        <ion-item class="ion-text-center anm_max_height io_bg_item" id="item_password">
+                            <ion-icon name="key" class="border_r ion-padding-end" color="primary"></ion-icon>
+                            <ion-input type="password" id="input_password" placeholder="Digite sua senha"></ion-input>
                         </ion-item>
 
-                        <ion-item lines="none" class="io_no_bg ion-margin-bottom ion-padding-bottom">
-                            <ion-item lines="none" class="io_no_bg">
-                                <ion-checkbox class="ion-margin-end "></ion-checkbox>
-                                <ion-label color=>Continuar conectado</ion-label>
+                        <ion-item lines="none" id="recuperar_senha">
+                            <ion-item lines="none" class="pointer">
+                                <ion-checkbox class="ion-margin-end"></ion-checkbox>
+                                <ion-label color="light">Continuar conectado</ion-label>
                             </ion-item>
-                            <ion-label class="ion-text-center">Recuperar senha</ion-label>
+                            <ion-label class="ion-text-end pointer" onclick="animationRecoveryPassword()" color="light">
+                                Recuperar senha
+                            </ion-label>
                         </ion-item>
 
-                        <ion-button expand="full" size="large" class="ion-margin-top ion-margin-bottom">Acessar
+                        <ion-item class="ion-text-center n_height" lines="none" id="sei_minha_senha">
+                            <ion-label onclick="iKnowMyPassword()" color="light" class="pointer">Eu sei minha senha
+                            </ion-label>
+                        </ion-item>
+
+                        <ion-button id="btn_acessar" expand="full" size="large"
+                            class="ion-margin-top ion-margin-bottom">Acessar
                         </ion-button>
 
-                        <ion-button class="ion-margin-top">
-                            <ion-icon name="logo-google" class="ion-margin-end"></ion-icon>
-                            Acessar com Gmail
+                        <ion-button class="ion-margin-top" color="light">
+                            <ion-icon src="img/google.svg" class="ion-margin-end"></ion-icon>
+                            <ion-label color="primary">Acessar com Gmail</ion-label>
                         </ion-button>
-                        <ion-item lines="none" class="io_no_bg">
-                            <span slot="end">Sobre o Rajus</span>
+                        <ion-item id="about" lines="none">
+                            <span slot="end" class="pointer">Sobre o Rajus</span>
                         </ion-item>
+                        </ion-checkbox>
                     </div>
                 </ion-slide>
+
+                <ion-slide>
+                    <div id="home">
+                        <ion-header>
+                            <ion-toolbar>
+                                <ion-buttons slot="start">
+                                    <ion-icon src="img/rajus2.svg" size="large" class="ion-margin-start"></ion-icon>
+                                </ion-buttons>
+                                <ion-title color="light">Rajus</ion-title>
+                                <ion-buttons slot="end">
+                                    <ion-icon name="close" size="large" onclick="deslogar()" color="light"
+                                        class="pointer"></ion-icon>
+                                </ion-buttons>
+                            </ion-toolbar>
+                        </ion-header>
+
+                        <ion-content>
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Cadastrar usuário</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Cadastre aqui novos usuários.
+                                        </ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light" class="ion-text-wrap">Cadastrar postos de
+                                            atendimento</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Cadastre aqui novos postos de
+                                            atendimento.
+                                        </ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Iniciar Consulta</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Inicia procedimentos para inclusão de
+                                            informações no cadastro do paciente
+                                        </ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Consultar paciente</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Consulta pacientes para acompanhamento
+                                            médico
+                                        </ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Farmácias próximas</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Lista as farmácias que possuem mais
+                                            próximas a sua localização</ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Agenda de tratamento</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Informa horários das próximas medicações
+                                            ou tratamentos</ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Meu cartão SUS Digital</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Permite a consulta ao cartão SUS ou a
+                                            impressão do mesmo</ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <ion-card class="io_bg_card">
+                                <ion-item class="ion-text-center">
+                                    <ion-icon name="people" slot="start" color="light" size="large"></ion-icon>
+                                    <ion-label>
+                                        <ion-card-title color="light">Avaliações</ion-card-title>
+                                        <ion-card-content class="ion-text-wrap">Avalia o atendimento recebido dos postos
+                                            de atendimento</ion-card-content>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-card>
+
+                            <br><br><br>
+                        </ion-content>
+                    </div>
+                </ion-slide>
+
             </ion-slides>
         </ion-content>
+
+        <script>
+
+            // Controle Slides //
+            function deslogar() {
+                slides.slidePrev();
+            }
+
+            // Autentication Firebase //
+        </script>
+
+        <script src="js/animations.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/authentication.js"></script>
+
+
+
     </ion-app>
 
 </body>
