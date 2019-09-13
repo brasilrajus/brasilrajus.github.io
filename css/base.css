@@ -1,3 +1,6 @@
-.n_box_shadow {
-    box-shadow: none;
+.io_no_bg {
+    --background: none;
+}
+.border_r {
+    border-right: 1px solid #f00; 
 }
