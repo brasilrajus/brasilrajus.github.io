@@ -5,7 +5,7 @@ ion-content {
     --background: none;
 }
 ion-slides {
-    height: 100%;
+    height: 100%;   
 }
 
 /* Login */ 
@@ -13,10 +13,15 @@ ion-input {
     color: #0459A9;
 }
 #login {
-    width: 100%;
+    width: calc(100% - 56px);
 }
 #logo {
     width: 7.5em;
+}
+@media (max-height: 519px) {
+    #logo {
+        width: 5.5em;
+    }
 }
 #about {
     color: #fff;
@@ -38,6 +43,20 @@ ion-toolbar {
 }
 ion-card-content {
     color: #fff;
+}
+#recuperar_senha {
+    --padding-start: 0;
+}
+#recuperar_senha ion-item:nth-child(1) {
+    --padding-start: 0;
+}
+@media (max-width: 359px) {
+    #recuperar_senha ion-item:nth-child(1) ion-label {
+        margin-left: -12px;
+    } 
+    #recuperar_senha ion-label {
+        font-size: 14px;
+    }
 }
 
 /* Base */
