@@ -38,7 +38,7 @@
  -->
 
     <link rel="stylesheet" type="text/css" href="css/base.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/animations.css" />
 
 </head>
@@ -50,9 +50,11 @@
             <ion-slides>
 
                 <ion-slide>
-                    <div>
+                    <div id="cadastro">
 
-                        <h1 class="color_s ion-margin-bottom ion-padding-bottom">Cadastro</h1>
+                        <img src="./../img/rajus2.svg" alt="Logo Rajus">
+
+                        <h1 class="color_s ion-margin-bottom ion-padding-bottom ion-margin-start">Cadastro</h1>
 
                         <ion-item lines="none" class="ion-margin-bottom pointer">
                             <ion-label color="light" onclick="aSerCadastrado('paciente')" id="paciente">Paciente</ion-label>
@@ -89,7 +91,9 @@
                             <ion-input type="text" placeholder="Conselho regional" color="light"></ion-input>
                         </ion-item>
 
-                        <ion-button color="light" class="ion-margin-top">Cadastrar</ion-button>
+                        <ion-button color="light" class="ion-margin-top">
+                            <ion-label color="primary">Cadastrar</ion-label>
+                        </ion-button>
 
                     </div>
                 </ion-slide>
