@@ -16,3 +16,6 @@ ion-item {
 .pointer {
     cursor: pointer;
 }
+.color_s {
+    color: #fff;
+}
