@@ -3,10 +3,10 @@ var inputCPF = document.getElementById('input_cpf');
 var inputPassword = document.getElementById('input_password');
 const slides = document.getElementById('slides');
 
-function acessar() {
+btnLogar.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(inputCPF.value, inputPassword.value).then(function (result) {
-        window.location.replace("pages/home.htm");
+        console.log('teste');
 
     }).catch(function (error) {
 
@@ -17,4 +17,4 @@ function acessar() {
         };
 
     });
-};
+});
