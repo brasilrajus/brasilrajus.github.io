@@ -7,7 +7,6 @@ btnLogar.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(inputCPF.value, inputPassword.value).then(function (result) {
         window.location.href = "pages/home.htm";
-        window.location.replace("pages/home.htm");
 
     }).catch(function (error) {
 
