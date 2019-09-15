@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang=pt-BR dir=ltr>
+
+<head>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <meta charset=utf-8 />
+    <title>RAJUS</title>
+    <base href="/" />
+    <meta name=Description content="RAJUS - Racionalização Judicial da Saúde">
+    <meta name=viewport content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
+    <meta name=format-detection content="telephone=no" />
+    <meta name=msapplication-tap-highlight content=no />
+    <meta name=theme-color content="#1976d2">
+    <link rel="shortcut icon" href="img/rajus.ico" />
+    <meta name=apple-mobile-web-app-capable content=yes />
+    <meta name=apple-mobile-web-app-status-bar-style content=black />
+    <!-- <script src="js/script.js?v=26"></script>  -->
+    <noscript>
+        <h1>Peço que entenda que sem o Javascript ativo teremos dificuldades em lhe atender bem!</h1>
+    </noscript>
+    <!-- Para evitar instalação: https://unpkg.com/browse/@ionic/core@4.0.0/README.md -->
+    <link href="https://unpkg.com/@ionic/core@4.0.0/css/ionic.bundle.css" rel="stylesheet">
+    <script src="https://unpkg.com/@ionic/core@4.0.0/dist/ionic.js"></script>
+    <!-- Caso deseje ser 100% off -->
+    <!-- <link href="no/i400/css/ionic.bundle.css" rel="stylesheet"> -->
+    <!-- <script src="no/i400/dist/ionic.js"></script> -->
+
+    <!-- 
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+ -->
+
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="css/sus-card.css" />
+
+</head>
+
+<body>
+
+    <ion-app>
+            <ion-header>
+                    <ion-toolbar>
+                        <ion-buttons slot="start">
+                            <ion-icon src="img/rajus2.svg" size="large" class="ion-margin-start"></ion-icon>
+                        </ion-buttons>
+                        <ion-title color="light">Rajus</ion-title>
+                        <ion-buttons slot="end">
+                            <ion-icon src="img/icons/back.svg" size="large" onclick="deslogar()" color="light"
+                                class="pointer"></ion-icon>
+                        </ion-buttons>
+                    </ion-toolbar>
+                </ion-header>
+
+        <ion-content>
+
+            <div class="container">
+                <img src="/img/cartao-sus.svg">
+                <p>Jonas Magalhães</p>
+                <span>0845 2514 1457 8745</span>
+            </div>
+
+            <div class="informacoes ion-padding">
+                <p>Nome Completo: </p>
+                <span>Jonas Ewerton Vieira Magalhães</span>
+                <p>Número do cartão do posto de saúde: </p>
+                <span>3215</span>
+            </div>
+        </ion-content>
+
+        <script src="js/animations.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+        <script src="js/app.js"></script>
+
+        <script src="js/register.js"></script>
+
+    </ion-app>
+
+</body>

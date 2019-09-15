@@ -5,7 +5,7 @@ ion-content {
     --background: none;
 }
 ion-slides {
-    height: 100%;   
+    min-height: 100%;   
 }
 
 /* Login */ 
@@ -14,6 +14,11 @@ ion-input {
 }
 #login {
     width: calc(100% - 56px);
+}
+@media (min-width: 721px) {
+    #login {
+        max-width: 300px;
+    }
 }
 #logo {
     width: 7.5em;

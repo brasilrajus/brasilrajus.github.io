@@ -6,7 +6,7 @@ const slides = document.getElementById('slides');
 btnLogar.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(inputCPF.value, inputPassword.value).then(function (result) {
-        slides.slideNext();
+        window.location.replace("pages/home.htm");
 
     }).catch(function (error) {
 
