@@ -6,7 +6,7 @@ const slides = document.getElementById('slides');
 btnLogar.addEventListener('click', function () {
 
     firebase.auth().signInWithEmailAndPassword(inputCPF.value, inputPassword.value).then(function (result) {
-        window.location.replace = "https://www.rajus.com.br/pages/home.htm";
+        console.log('teste');
 
     }).catch(function (error) {
 
