@@ -14,7 +14,11 @@ btnLogar.addEventListener('click', function () {
             case 'auth/invalid-email': alert('Email não encontrado');
             break;
             case 'auth/wrong-password': alert('Senha inválida');
+            break;
+            case 'auth/user-not-found': alert('Email não encontrado');
         };
+
+        console.log(error.code);
 
     });
 });
