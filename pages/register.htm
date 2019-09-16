@@ -46,20 +46,21 @@
 <body>
 
     <ion-app>
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-icon src="img/rajus2.svg" size="large" class="ion-margin-start"></ion-icon>
+                </ion-buttons>
+                <ion-title color="light">Rajus</ion-title>
+                <ion-buttons slot="end">
+                    <ion-icon name="close" size="large" onclick="deslogar()" color="light" class="pointer">
+                    </ion-icon>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
         <ion-content class="swiper-no-swiping">
 
-                <ion-header>
-                        <ion-toolbar>
-                            <ion-buttons slot="start">
-                                <ion-icon src="img/rajus2.svg" size="large" class="ion-margin-start"></ion-icon>
-                            </ion-buttons>
-                            <ion-title color="light">Rajus</ion-title>
-                            <ion-buttons slot="end">
-                                <ion-icon name="close" size="large" onclick="deslogar()" color="light"
-                                    class="pointer"></ion-icon>
-                            </ion-buttons>
-                        </ion-toolbar>
-                    </ion-header>
             <ion-slides>
 
                 <ion-slide>
@@ -86,12 +87,12 @@
 
                         <ion-item>
                             <ion-icon name="people" class="ion-margin-end" color="light"></ion-icon>
-                            <ion-input type="email" placeholder="Email" color="light"></ion-input>
+                            <ion-input type="email" placeholder="Email" color="light" id="input_email"></ion-input>
                         </ion-item>
 
                         <ion-item>
                             <ion-icon name="people" class="ion-margin-end" color="light"></ion-icon>
-                            <ion-input type="text" placeholder="Nome" color="light"></ion-input>
+                            <ion-input type="text" placeholder="Senha" color="light" id="input_password"></ion-input>
                         </ion-item>
 
                         <ion-item id="cartaoSus">
@@ -114,7 +115,7 @@
                             </ion-select>
                         </ion-item>
 
-                        <ion-button color="light" class="ion-margin-top">
+                        <ion-button color="light" class="ion-margin-top" id="btn_cadastrar">
                             <ion-label color="primary">Cadastrar</ion-label>
                         </ion-button>
 
@@ -125,9 +126,6 @@
         </ion-content>
 
         <script src="js/animations.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-        <script src="js/app.js"></script>
-
         <script src="js/register.js"></script>
 
     </ion-app>

@@ -1,0 +1,23 @@
+.medicacoes {
+    background: #fff;
+    color: #0459A9;
+    max-width: 320px;
+    border-radius: 50px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 10px;
+}
+.farmacias_endereco {
+    background: #fff;
+    color: #0459A9;
+    max-width: 300px;
+    display: inline-block;
+}
+#composicao_medicamento, #composicao_medicamento2 {
+    width: 300px;
+    background: #fff;
+    color: #0459A9;
+    line-height: 0.4;
+    margin: auto;
+    margin-top: 20px;
+}

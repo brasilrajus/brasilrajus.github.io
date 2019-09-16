@@ -40,7 +40,6 @@
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/animations.css" />
-    <link rel="stylesheet" type="text/css" href="css/sus-card.css" />
 
 </head>
 
@@ -54,31 +53,24 @@
                 </ion-buttons>
                 <ion-title color="light">Rajus</ion-title>
                 <ion-buttons slot="end">
-                    <ion-icon src="img/icons/back.svg" size="large" onclick="deslogar()" color="light" class="pointer">
+                    <ion-icon name="close" size="large" onclick="deslogar()" color="light" class="pointer">
                     </ion-icon>
                 </ion-buttons>
             </ion-toolbar>
         </ion-header>
 
-        <ion-content>
+        <ion-content class="swiper-no-swiping">
 
-            <div class="container">
-                <img src="/img/cartao-sus.svg">
-                <p>Jonas Magalhães</p>
-                <span>0845 2514 1457 8745</span>
-            </div>
+            <ion-slides>
 
-            <div class="informacoes ion-padding">
-                <p>Nome Completo: </p>
-                <span>Jonas Ewerton Vieira Magalhães</span>
-                <p>Número do cartão do posto de saúde: </p>
-                <span>3215</span>
-            </div>
+                <ion-slide>
+                    <ion-card-title class="ion-margin" color="light">Em desenvolvimento</ion-card-title>
+                </ion-slide>
+
+            </ion-slides>
         </ion-content>
 
         <script src="js/animations.js"></script>
-
-        <script src="js/register.js"></script>
 
     </ion-app>
 

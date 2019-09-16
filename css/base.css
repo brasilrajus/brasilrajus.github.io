@@ -1,6 +1,9 @@
 ion-item {
     --background: none;
 }
+.no_box_shadow {
+    box-shadow: none;
+}
 .border_r {
     border-right: 1px solid #0459A9; 
 }
