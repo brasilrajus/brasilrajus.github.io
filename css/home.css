@@ -1,0 +1,22 @@
+#main_home {
+    max-width: 435px;
+    margin: auto;
+    margin-top: 20px;
+}
+#links_home ion-card {
+    max-width: 145px;
+    margin: auto;
+    padding: 10px;
+}
+#fab_hearth {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    animation-name: pulse;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    from {width: 50px}
+    to {width: 52px}
+}
