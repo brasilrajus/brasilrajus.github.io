@@ -4,6 +4,9 @@
 ion-tabs {
     z-index: 1;
 }
+ion-inputs {
+    overflow: hidden;
+}
 #title_login {
     max-width: 170px;
     margin: auto;
@@ -40,7 +43,16 @@ ion-tabs {
 }
 @media (orientation: landscape) and (max-width: 719px) {
     #img_lands_logo {
-        margin-left: -90px;
+        left: 2%;
+        top: 10%;
+        position: fixed;
+    }
+    #main_login {
+        margin-left: 30%;
+        margin-top: 15%;
+    }
+    #login_input_senha {
+        margin-top: -10px;
     }
     #aside_login, #logo_login {
         display: none;

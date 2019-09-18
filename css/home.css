@@ -9,6 +9,7 @@
     padding: 10px;
     height: 210px;
     border-radius: 10px;
+    background: #fff;
 }
 #links_home ion-card:nth-child(7) {
     padding-top: 35px;
