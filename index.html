@@ -46,13 +46,15 @@
 
     <ion-app>
 
-        <ion-content>            
+        <ion-content>
+
 
             <div class="container">
 
-                    <img src="img/icons/rajus.svg" id="img_lands_logo">
+                <img src="img/icons/rajus.svg" id="img_lands_logo">
 
                 <div id="main_login">
+
 
                     <div id="logo_login" class="ion-margin-bottom">
                         <ion-item id="title_login" lines="none">
@@ -61,22 +63,23 @@
                         </ion-item>
                     </div>
 
-                    <ion-list>
-                        <ion-item lines="none" class="inputs_login ion-margin-bottom ion-margin-top">
-                            <ion-icon name="people" slot="start" color="primary"></ion-icon>
-                            <ion-input type="tel" placeholder="CPF" color="primary"></ion-input>
-                        </ion-item>
+                    <ion-item lines="none" class="inputs_login ion-margin-bottom ion-margin-top">
+                        <ion-icon name="people" slot="start" color="primary"></ion-icon>
+                        <ion-input type="tel" placeholder="CPF" color="primary" id="input_cpf" maxlength=14>
+                        </ion-input>
+                    </ion-item>
 
+                    <div id="login_input_senha">
                         <ion-item lines="none" class="inputs_login ion-margin-bottom">
                             <ion-icon name="key" slot="start" color="primary"></ion-icon>
                             <ion-input type="password" placeholder="Senha" color="primary"></ion-input>
                         </ion-item>
+                    </div>
 
-                        <ion-item lines="none">
-                            <ion-checkbox class="ion-margin-end pointer"></ion-checkbox>
-                            <ion-label color="primary">Lembrar acesso</ion-label>
-                        </ion-item>
-                    </ion-list>
+                    <ion-item lines="none">
+                        <ion-checkbox class="ion-margin-end pointer"></ion-checkbox>
+                        <ion-label color="primary">Lembrar acesso</ion-label>
+                    </ion-item>
 
                     <!-- Excluir "a Href" depois-->
 
@@ -123,14 +126,22 @@
                             <ion-label>Dúvidas</ion-label>
                         </ion-tab-button>
 
-                        <ion-tab-button tab="recovery">
+                        <ion-tab-button tab="recovery" id="btn_lembrar_senha">
                             <ion-icon name="key" color="primary"></ion-icon>
                             <ion-label>Recuperar senha</ion-label>
+                        </ion-tab-button>
+
+                        <ion-tab-button tab="recovery" id="btn_sei_minha_senha" class="none">
+                            <ion-icon name="key" color="primary"></ion-icon>
+                            <ion-label>Eu sei minha senha</ion-label>
                         </ion-tab-button>
                     </ion-tab-bar>
                 </ion-tabs>
             </ion-toolbar>
         </ion-footer>
     </ion-app>
+
+    <script type="text/javascript" src="js/validators.js"></script>
+    <script type="text/javascript" src="js/animations-login.js"></script>
 
 </body>

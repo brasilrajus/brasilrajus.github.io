@@ -1,12 +1,17 @@
 #main_home {
-    max-width: 435px;
+    max-width: 500px;
     margin: auto;
     margin-top: 20px;
 }
 #links_home ion-card {
-    max-width: 145px;
-    margin: auto;
+    max-width: 155px;
+    margin: 5px auto;
     padding: 10px;
+    height: 210px;
+    border-radius: 10px;
+}
+#links_home ion-card:nth-child(7) {
+    padding-top: 35px;
 }
 #fab_hearth {
     position: absolute;

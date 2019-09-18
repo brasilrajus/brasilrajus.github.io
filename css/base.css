@@ -11,8 +11,12 @@
 
 body {
     min-width: 320px;
+    background: #ffffe0;
 }
-ion-item {
+ion-content {
+    --background: none;
+}
+ion-item, ion-list {
     --background: none;
 }
 .no_box_shadow {
@@ -24,11 +28,48 @@ ion-item {
 .color_light {
     color: #fff;
 }
-.height0 {
-    animation-name: height0;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    overflow: hidden;
+.none {
+    display: none;
 }
-.height72 {
+
+
+/* Animation */
+.height0 {
+    animation-name: reduzirA0;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    overflow: hidden; 
+}
+.height50 {
+    animation-name: ampliarA50;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    overflow: hidden; 
+}
+.opacity0 {
+    animation-name: reduzirOpacity;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+.opacity1 {
+    animation-name: ampliarOpacity;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reduzirA0 {
+    from { height: 50px;}
+    to { height: 0;}
+}
+@keyframes ampliarA50 {
+    from { height: 0;}
+    to { height: 50px;}
+}
+@keyframes reduzirOpacity {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes ampliarOpacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
