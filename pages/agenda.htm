@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang=pt-BR dir=ltr>
+
+<head>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <meta charset=utf-8 />
+    <title>RAJUS</title>
+    <base href="/" />
+    <meta name=Description content="RAJUS - Racionalização Judicial da Saúde">
+    <meta name=viewport content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
+    <meta name=format-detection content="telephone=no" />
+    <meta name=msapplication-tap-highlight content=no />
+    <meta name=theme-color content="#1976d2">
+    <link rel="shortcut icon" href="img/rajus.ico" />
+    <meta name=apple-mobile-web-app-capable content=yes />
+    <meta name=apple-mobile-web-app-status-bar-style content=black />
+    <!-- <script src="js/script.js?v=26"></script>  -->
+    <noscript>
+        <h1>Peço que entenda que sem o Javascript ativo teremos dificuldades em lhe atender bem!</h1>
+    </noscript>
+    <!-- Para evitar instalação: https://unpkg.com/browse/@ionic/core@4.0.0/README.md -->
+    <link href="https://unpkg.com/@ionic/core@4.0.0/css/ionic.bundle.css" rel="stylesheet">
+    <script src="https://unpkg.com/@ionic/core@4.0.0/dist/ionic.js"></script>
+    <!-- Caso deseje ser 100% off -->
+    <!-- <link href="no/i400/css/ionic.bundle.css" rel="stylesheet"> -->
+    <!-- <script src="no/i400/dist/ionic.js"></script> -->
+
+    <!-- 
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+ -->
+
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/agenda.css" />
+
+</head>
+
+<body>
+
+    <ion-app>
+
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <a href="/pages/home.htm">
+                        <ion-icon size="large" src="/img/icons/rajus.svg">
+                </ion-buttons>
+                <ion-title slot="start" color="light">RAJUS</ion-title>
+                </a>
+                <ion-buttons slot="end">
+                    <ion-icon size="large" name="log-out">
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+
+            <div id="agenda_datas">
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Terça</h2>
+                        <p>08/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card class="ion-no-padding">
+                    <ion-card-content>
+                        <h2>Quarta</h2>
+                        <p>09/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Quinta</h2>
+                        <p>10/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Sexta</h2>
+                        <p>11/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Sábado</h2>
+                        <p>12/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Domingo</h2>
+                        <p>13/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-content>
+                        <h2>Segunda</h2>
+                        <p>14/08</p>
+                    </ion-card-content>
+                </ion-card>
+
+            </div>
+
+            <div id="agenda_medicacoes">
+                <ion-card class="ion-padding ion-text-center">
+                    <div>
+                        <ion-label>
+                            <h1>18:00</h1>
+                            <p>Ibuprofeno</p>
+                        </ion-label>
+                    </div>
+
+                    <div>
+                        <ion-label>
+                            <h1>19:00</h1>
+                            <p>Ibuprofeno</p>
+                        </ion-label>
+                    </div>
+
+                    <div>
+                        <ion-label>
+                            <h1>19:30</h1>
+                            <p>Ibuprofeno</p>
+                        </ion-label>
+                    </div>
+
+                    <div>
+                        <ion-label>
+                            <h1>20:00</h1>
+                            <p>Ibuprofeno</p>
+                        </ion-label>
+                    </div>
+
+
+                </ion-card>
+            </div>
+
+        </ion-content>
+    </ion-app>
+
+</body>

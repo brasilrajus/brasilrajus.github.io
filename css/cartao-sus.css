@@ -1,0 +1,15 @@
+#cartao_sus {
+    position: relative;
+    max-width: 450px;
+    margin: 5%;
+}
+#cartao_sus p {
+    position: absolute;
+    bottom: 8%;
+    left: 13%;
+}
+#cartao_sus span {
+    position: absolute;
+    bottom: 5%;
+    left: 13%;
+}

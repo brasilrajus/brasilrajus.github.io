@@ -1,0 +1,12 @@
+ion-slides {
+    height: 100%;
+}
+ion-label {
+    font-weight: bold;
+}
+ion-input {
+    border: 1px solid #0459A9;
+    border-radius: 50px;
+    margin-top: 15px;
+    text-align: center;
+}
