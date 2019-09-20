@@ -1,4 +1,4 @@
-inputCPF = document.getElementById('login');
+inputCPF = document.getElementById('input_cpf');
 btnAcessarLoginValidators = document.getElementById('btn_acessar');
 
 /* Verificador de CPF */
