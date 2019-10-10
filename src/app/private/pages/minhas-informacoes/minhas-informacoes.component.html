@@ -1,0 +1,33 @@
+<div class="area-preregister">
+    <div class="info">
+        <p>Caso necessite modificar alguma informação, por favor, dirija-se a algum posto de atendimento</p>
+    </div>
+
+    <mat-form-field>
+        <mat-label>Nome Completo</mat-label>
+        <input matInput [value]="infoUser.nome">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput [value]="infoUser.cpf">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cartão do posto de saúde</mat-label>
+        <input matInput [value]="infoUser.numeroCartaoPosto">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [value]="infoUser.email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput [value]="infoUser.telefone">
+    </mat-form-field>
+
+    <h4 class="inicio" routerLink="/home-paciente">Retornar ao ínício</h4>
+
+</div>

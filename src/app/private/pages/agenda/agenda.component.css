@@ -1,0 +1,48 @@
+.info {
+    border-top: 30px solid blue;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+.inicio {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    top: -15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Estilização da página */
+
+table {
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: #777;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }

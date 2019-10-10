@@ -1,0 +1,24 @@
+<div class="area-preregister">
+    <div class="info">
+        <p>Se a farmácia que vc encontrou não tiver a medicação necessária, não deixe de nos informar</p>
+    </div>
+
+ <mat-accordion>
+        <mat-expansion-panel *ngFor="let posto of postosDeAtendimento">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p style="color: blue">{{posto.nome}} <br> <span style="color: #777">{{posto.endereco}},
+                            {{posto.bairro}}</span></p>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <p>Medicações encontradas</p>
+            <mat-panel-description *ngFor="let medicacao of posto.medicacoesEncontradas">
+                {{medicacao}}
+            </mat-panel-description>
+        </mat-expansion-panel>
+    </mat-accordion>
+    
+    <h4 class="inicio" routerLink="/home-paciente">Retornar ao ínício</h4>
+
+</div>

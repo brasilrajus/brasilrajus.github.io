@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    min-height: 100vh;
+    background-image: url('./assets/imgs/bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0
+}
+/* Geral */ 
+.pointer { cursor: pointer; }
+
+/* Textos */
+.text-center { text-align: center; }
+.text-color-1 { color: blue;}
+
+/* Posições */
+.pos-relative { position: relative; }
+
+/* Margens e bordas */
+.full-width { width: 100%; }
+.margin-auto { margin: auto; }
+.no-border { border: none; }
+
+/* Botões */
+.btn-sucess { background: mediumblue; color: white; }
+.mat-stroked-button { background: #eee; color: mediumblue; }
+
+/* Angular Material */
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar { background-color: rgba(255,255,255,0); }
+.mat-hint { color: red; }
+
+/* Toast */
+.toast-sucess { color: white; background: mediumblue; }
+.toast-sucess .mat-simple-snackbar-action { color: yellow !important; }
+.toast-error { color: white; background: rgb(114, 17, 17); }
+.toast-error .mat-simple-snackbar-action { color: white !important; }

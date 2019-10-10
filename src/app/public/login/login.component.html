@@ -1,0 +1,37 @@
+<div class="area-login pos-relative">
+  <div class="card-login pos-relative">
+
+    <div class="text-center">
+      <img src="./../../../assets/imgs/rajus.svg" alt="Logo do Rajus" class="logo-login">
+    </div>
+
+    <div class="text-center">
+      <h2 class="text-color-1">Rajus</h2>
+      <p>Aqui trataremos de te auxiliar a encontrar pontos de atendimento e medicamento necessários para sua saúde.</p>
+    </div>
+
+    <form>
+      <input type="email" class="input_login no-border full-width text-center" placeholder="Email"
+        [(ngModel)]="user.email" name="user.email" id="input_email" aria-label="Campo para digitar Login">
+
+      <input type="password" class="input_login no-border full-width text-center" placeholder="Senha"
+        [(ngModel)]="user.senha" name="user.senha" id="input_senha" aria-label="Campo para digitar Senha">
+    </form>
+
+    <button mat-raised-button class="btn_acessar_login pointer full-width" (click)="loginOrRecovery()"
+      id="btn_acessar">{{btnLogin}}</button>
+
+    <h4 class="queTalUmclique text-center">{{oneClick}}</h4>
+
+    <button mat-raised-button class="pointer full-width">
+      <img src="./../../../assets/icons/google.svg" alt="Logo da Google">
+      <span class="text-color-1" (click)="GoogleAuth()">{{gmail}}</span>
+    </button>
+
+    <mat-tab-group mat-stretch-tabs (click)="alternarMenus($event)">
+      <mat-tab label="Acessar" class="pointer " *ngIf="!tabgroup.acessar"></mat-tab>
+      <mat-tab label="Recuperar senha" class="pointer" *ngIf="!tabgroup.recuperar"></mat-tab>
+      <mat-tab label="Cadastrar" class="pointer" *ngIf="!tabgroup.cadastrar"></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

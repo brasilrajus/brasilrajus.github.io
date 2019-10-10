@@ -1,0 +1,50 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "site": "rajus-c8a95",
+    "public": "dist/rajus-brasil",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],    
+    "headers": [ 
+      {
+      "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "headers": [{
+        "key": "Acess-Control-Allow-Origin",
+        "value": "*"
+        }]
+      },
+      {
+      "source": "**/*.@(jpg|jpeg|gif|png|css|js|webp|svg)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=31557600"
+        }]
+      },
+      {
+      "source": "404.html",
+      "headers": [ {
+      "key": "Cache-Control",
+      "value": "max-age=31557600"
+    } ]
+      }
+  ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

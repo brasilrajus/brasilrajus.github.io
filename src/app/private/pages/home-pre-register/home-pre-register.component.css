@@ -1,0 +1,26 @@
+.info {
+    border-top: 30px solid blue;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    width: 75%;
+}
+.cards-link mat-card {
+    background-color: blue; 
+    color: #fff;
+    max-width: 300px;
+    margin:  0 auto 15px auto;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.cards-link mat-card img {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    max-height: 30px;
+}
+.logout {
+    width: 30px;
+    position: absolute;
+    top: 35px;
+    right: 10px;
+}

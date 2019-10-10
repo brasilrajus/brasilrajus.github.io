@@ -1,0 +1,100 @@
+{
+  "configVersion": 1,
+  "timestamp": 1570677083235,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.2f360cfc37aa049ddbc1.js",
+        "/main-es5.2f360cfc37aa049ddbc1.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.d3e61f0dd2b58e518eca.js",
+        "/polyfills-es5.f8b5a32bf736d11d106f.js",
+        "/runtime-es2015.b948044840398824f16e.js",
+        "/runtime-es5.b948044840398824f16e.js",
+        "/styles.a52c47fa3bb1ab18fa35.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/agenda.svg",
+        "/assets/icons/google.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/logout.svg",
+        "/assets/icons/register.svg",
+        "/assets/icons/telefone.svg",
+        "/assets/icons/user.svg",
+        "/assets/imgs/bg.jpg",
+        "/assets/imgs/bg.webp",
+        "/assets/imgs/rajus.svg",
+        "/bg.97e0594decdb8903b61e.webp"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/agenda.svg": "b45b08d9569ee5c8c8140661bed1c364ccd67f89",
+    "/assets/icons/google.svg": "c61f6762d15b2c325843ae8c2474341ed52fb889",
+    "/assets/icons/icon-128x128.png": "36230df6e65f7d3b0ef9be221105ee5b653fdaa8",
+    "/assets/icons/icon-144x144.png": "1edb28846d4654a248d09ee2da65d415d5eb4d3f",
+    "/assets/icons/icon-152x152.png": "e7043baa132f106e9b9935f57aa94ab63f241a5e",
+    "/assets/icons/icon-192x192.png": "606c377cc653519cb338f6b69d0e9a19d81e8013",
+    "/assets/icons/icon-384x384.png": "6bf3a607637ec22e7ce68376379b43870f6c5fb8",
+    "/assets/icons/icon-512x512.png": "383d4f705eaf5191aa655f428a9e569d5522e4f2",
+    "/assets/icons/icon-72x72.png": "3559627bec5622cb3b67f5bc267f11f7f9181dd4",
+    "/assets/icons/icon-96x96.png": "4d60c7c0876f1af21263a904e2e8c1f690d89db1",
+    "/assets/icons/logout.svg": "b348212ce382a776c2775b6a1e49dea0411c7498",
+    "/assets/icons/register.svg": "e519ac60318b40ec16ce44ec41c83db25358169c",
+    "/assets/icons/telefone.svg": "beeae015746e0d2228e3c7ebbe4f3e571109f009",
+    "/assets/icons/user.svg": "aae5afa490c3fc90717e70d716a516338af8d332",
+    "/assets/imgs/bg.jpg": "4da039e724b4a51c1f98eef8805b014d5a290e73",
+    "/assets/imgs/bg.webp": "b95c7225a5c5506822a51537468355d54726a7f5",
+    "/assets/imgs/rajus.svg": "b5920556570497a6f23f065d061b39c37bd500e6",
+    "/bg.97e0594decdb8903b61e.webp": "b95c7225a5c5506822a51537468355d54726a7f5",
+    "/favicon.ico": "b505db5c4a1fb35d59ef587efdd003669dae113c",
+    "/index.html": "06bedce8ffa589a307d68cf3ee5d0dc46af00886",
+    "/main-es2015.2f360cfc37aa049ddbc1.js": "0f22203c128ebbec1c0cc8cc68623ee16ae7eaf1",
+    "/main-es5.2f360cfc37aa049ddbc1.js": "1f04be7826b31a4607534b51f9834831659e522e",
+    "/manifest.webmanifest": "800fe6df17f3f080fe2b9dcee842ef57a35d6abf",
+    "/polyfills-es2015.d3e61f0dd2b58e518eca.js": "e2f28c3743afd2899e140ad831df9675c233c02b",
+    "/polyfills-es5.f8b5a32bf736d11d106f.js": "bc55c457c97924a880c8c5bee5337b8d12a7d7d8",
+    "/runtime-es2015.b948044840398824f16e.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.b948044840398824f16e.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.a52c47fa3bb1ab18fa35.css": "a143356b2a9d8f878b72808f5b6adba85e88b01b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

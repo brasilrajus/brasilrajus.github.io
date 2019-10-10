@@ -1,0 +1,23 @@
+.info {
+    border-top: 30px solid blue;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+.inicio {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    top: -15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.mat-raised-button {
+    width: 90%;
+    height: 50px;
+    margin-bottom: 5px;
+}

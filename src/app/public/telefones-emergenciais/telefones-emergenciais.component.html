@@ -1,0 +1,10 @@
+<div class="area-telefones-emergenciais">
+    <div class="info">
+        <p>Passar trote é crime, utilize esta lista com responsabilidade</p>
+
+        <button mat-raised-button *ngFor="let telefone of telefonesUteis">{{telefone.instituicao}} - {{telefone.numero}}</button>
+
+    </div>
+
+    <h4 class="inicio" routerLink="/home-paciente">Retornar ao ínício</h4>
+</div>
