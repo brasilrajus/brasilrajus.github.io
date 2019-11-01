@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# install basica
+    node/npm
+    npm install @angular/cli -g
+    npm install -g firebase-tools
+# Criar inicio
+    ng new rajus-brasil
+    cd rajus-brasil
+# Add Firebase
+    npm install firebase @angular/fire --save
+    npm install @angular/fire firebase --save
+    firebase login
+    firebase init
+    --
+      O que você deseja usar como seu diretório público? (público
+        dist/rajus-brasil
+      Após a compilação do código, o código do aplicativo Angular 8 fica aqui
+    --
+    ng serve --open
+    ng build --prod --aot
+    firebase deploy
+    --
+    Project Console: https://console.firebase.google.com/project/rajus-c8a95/overview
+    Hosting URL: https://rajus-c8a95.firebaseapp.com
+
+    

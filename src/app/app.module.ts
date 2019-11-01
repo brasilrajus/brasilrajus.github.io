@@ -34,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { AlterarSenhaComponent } from './private/pages/alterar-senha/alterar-senha.component';
 
 
 
@@ -47,7 +48,8 @@ import { MatTableModule } from '@angular/material/table';
     MinhasInformacoesComponent,
     HomePacienteComponent,
     PostosAtendimentoComponent,
-    TelefonesEmergenciaisComponent
+    TelefonesEmergenciaisComponent,
+    AlterarSenhaComponent
   ],
   imports: [
     BrowserModule,

@@ -36,14 +36,13 @@ export class AuthService {
     });
   }
   usuarioLogado() {
-    this.router.navigate(['/home-paciente']);
     this.toastCtrl.ToastSucess('Seja bem vindo(a) ' + this.userData.displayName, 'Fechar');
   }
   usuarioDeslogado() {
     this.router.navigate(['/']);
   }
 
-  // Acessar com login e senha
+  // Acessar com email e senha
   SignIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -61,7 +60,7 @@ export class AuthService {
   async signUp(email: string, senha: string, user: object) {
     try {
       const newUser = await this.afAuth.auth.createUserWithEmailAndPassword(email, senha);
-      await this.afs.collection('Users').doc(newUser.user.uid).set(user);
+      await this.afs.collection('users').doc(newUser.user.uid).set(user);
       this.SendVerificationMail()
     } catch (error) {
       console.log(error);
@@ -70,9 +69,13 @@ export class AuthService {
 
   // Atualizar Usuário
   preRegister(uid, user) {
-    this.afs.collection('Users').doc(uid).set(user).then(() => {
+    this.afs.collection('users').doc(uid).set(user)
+    .then(() => {
       this.toastCtrl.ToastSucess('Registro finalizado.', 'fechar');
-    });
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 
   // Enviar verificação de email
@@ -110,7 +113,6 @@ export class AuthService {
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider())
       .then((result) => {
-
       });
 
   }
