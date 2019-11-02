@@ -16,6 +16,7 @@
     "rewrites": [
       {
         "source": "**",
+        "function": "webApi",
         "destination": "/index.html"
       }
     ]

@@ -1,7 +1,27 @@
+import * as express from 'express';
+// import * as bodyParser from "body-parser";
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
 admin.initializeApp();
+
+
+/************************/
+/******* Express ********/
+/************************/
+const app1 = express();
+
+// https://rajus.com.br/api1/teste
+// https://us-central1-rajus-c8a95.cloudfunctions.net/api1/teste
+app1.get("/teste", (req, res) => {
+    res.send("Oi Mundo");
+});
+
+const api1 = functions.https.onRequest(app1)
+
+/*************************/
+/*** Aqui acaba o express */
+/************************ */
 
 const onReq = functions.https.onRequest;
 
@@ -13,6 +33,8 @@ const users = [
 ]
 
 const db = admin.firestore();
+
+// https://rajus.com.br/api/v1/usuarios
 
 /* const writeToFirestore = functions.firestore
     .document('users/SGfIngOvZIhhpsIpHwJEIE1Sm9K2')
@@ -95,7 +117,8 @@ export {
     retornarDocument,
     retornarCollection,
     escutarModificacaoNoFirestore,
-    lerJsonObject
+    lerJsonObject,
+    api1
 }
 /**
  * TODO: Conectar as duas apis - cors
