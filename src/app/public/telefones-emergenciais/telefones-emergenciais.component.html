@@ -1,10 +1,36 @@
-<div class="area-telefones-emergenciais">
-    <div class="info">
-        <p>Passar trote é crime, utilize esta lista com responsabilidade</p>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Rajus Alagoas</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-        <button mat-raised-button *ngFor="let telefone of telefonesUteis">{{telefone.instituicao}} - {{telefone.numero}}</button>
+<ion-content class="bg_none">
 
-    </div>
+  <ion-card class="shadow_none ion-text-center">
+    <ion-card-title>Telefones Emergênciais</ion-card-title>
 
-    <h4 class="inicio" routerLink="/home-paciente">Retornar ao ínício</h4>
-</div>
+    <ion-item class="ion-margin-bottom">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h2>Polícia Militar</h2>
+        <p>190</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h2>Bombeiros</h2>
+        <p>193</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

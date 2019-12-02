@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Rajus Alagoas</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_none">
+  <ion-card class="shadow_none">
+    <ion-card-title class="ion-text-center ion-margin" color="primary">Rajus Brasil</ion-card-title>
+    <ion-card-subtitle class="ion-text-center ion-margin" color="primary">Por gentileza, confirme as informações abaixo antes de finalizar o pré cadastro</ion-card-subtitle>
+
+    <ion-card-subtitle class="ion-text-center ion-margin" color="primary">Após a conclusão do pré cadastro, é necessário procurar um posto de atendimento para a ativação de seu usuário.</ion-card-subtitle>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Nome Completo" [(ngModel)]="user.nome"
+        name="user.nome" required (keyup)="formatarNome()">
+        <ion-icon name="business" color="light" [ngClass]="user.nomeValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Email" [(ngModel)]="user.email"
+        name="user.email" required (keypress)="formatarEmail()">
+        <ion-icon name="business" color="light" [ngClass]="user.emailValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="CPF" [(ngModel)]="user.cpf"
+        name="user.cpf" required (keyup)="formatarCPF()" maxlength="14">
+        <ion-icon name="business" color="light" [ngClass]="user.cpfValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Telefone" [(ngModel)]="user.telefone"
+        name="user.telefone" required (keyup)="formatarTelefone()" maxlength="15">
+        <ion-icon name="business" color="light" [ngClass]="user.telefoneValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Cartão SUS" [(ngModel)]="user.sus"
+        name="user.sus" required (keyup)="formatarSus()" maxlength="18">
+        <ion-icon name="business" color="light" [ngClass]="user.susValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-row justify-content-between class="ion-margin">
+      <ion-button (click)="limpar()">Limpar campos</ion-button>
+      <ion-button (click)="adicionar()">Adicionar usuário</ion-button>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

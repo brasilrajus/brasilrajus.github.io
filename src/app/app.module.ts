@@ -1,75 +1,93 @@
-/* Módulos Básicos */
-import { BrowserModule } from '@angular/platform-browser';
+import { LoginGuardService } from './guards/login-guard.service';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { FormsModule } from '@angular/forms';
 
-/* Componentes */
+/*******************************
+ * Componentes 
+ *******************************/
 import { AppComponent } from './app.component';
 import { LoginComponent } from './public/login/login.component';
-import { HomePreRegisterComponent } from './private/pages/home-pre-register/home-pre-register.component';
-import { PreRegisterComponent } from './private/pages/pre-register/pre-register.component';
-import { MinhasInformacoesComponent } from './private/pages/minhas-informacoes/minhas-informacoes.component';
-import { HomePacienteComponent } from './private/pages/home-paciente/home-paciente.component';
-import { PostosAtendimentoComponent } from './private/pages/postos-atendimento/postos-atendimento.component';
+import { AlterarSenhaComponent } from './private/paciente/alterar-senha/alterar-senha.component';
+import { AgendaMedicaComponent } from './private/paciente/agenda-medica/agenda-medica.component';
+import { PrescritorHomeComponent } from './private/prescritor/prescritor-home/prescritor-home.component';
+import { PrescritorCadastrarPostosComponent } from './private/prescritor/prescritor-cadastrar-postos/prescritor-cadastrar-postos.component';
+import { AdministradorHomeComponent } from './private/administrador/administrador-home/administrador-home.component';
+import { RootHomeComponent } from './private/root/root-home/root-home.component';
+import { PacienteHomeComponent } from './private/paciente/paciente-home/paciente-home.component';
+import { GroupsHomeComponent } from './private/groups/groups-home/groups-home.component';
+import { PreCadastroComponent } from './public/pre-cadastro/pre-cadastro.component';
+import { MinhasInformacoesComponent } from './private/paciente/minhas-informacoes/minhas-informacoes.component';
+import { PrescritorConsultarUsuariosComponent } from './private/prescritor/prescritor-consultar-usuarios/prescritor-consultar-usuarios.component';
+import { PostosDeAtendimentoComponent } from './public/postos-de-atendimento/postos-de-atendimento.component';
 import { TelefonesEmergenciaisComponent } from './public/telefones-emergenciais/telefones-emergenciais.component';
+import { AdministradorCadastrarPostosComponent } from './private/administrador/administrador-cadastrar-postos/administrador-cadastrar-postos.component';
+import { HomePrecadastroComponent } from './public/home-precadastro/home-precadastro.component';
 
-/* Angular Firebase */
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+/*******************************
+ * Services
+ *******************************/
+import { HomeGuardService } from './guards/home-guard.service';
+
+/*******************************
+ * Firebase imports
+ *******************************/
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AgendaComponent } from './private/pages/agenda/agenda.component';
+import * as firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { FormsModule } from '@angular/forms';
 
-/* Angular Material */
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatCardModule } from '@angular/material/card';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTableModule } from '@angular/material/table';
-import { AlterarSenhaComponent } from './private/pages/alterar-senha/alterar-senha.component';
-
-
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomePreRegisterComponent,
-    PreRegisterComponent,
-    AgendaComponent,
-    MinhasInformacoesComponent,
-    HomePacienteComponent,
-    PostosAtendimentoComponent,
+    GroupsHomeComponent,
+    PacienteHomeComponent,
+    RootHomeComponent,
+    AdministradorHomeComponent,
+    PrescritorHomeComponent,
+    PrescritorCadastrarPostosComponent,
+    PreCadastroComponent,
+    HomePrecadastroComponent,
+    PrescritorConsultarUsuariosComponent,
+    PostosDeAtendimentoComponent,
     TelefonesEmergenciaisComponent,
-    AlterarSenhaComponent
+    AgendaMedicaComponent,
+    AlterarSenhaComponent,
+    MinhasInformacoesComponent,
+    AdministradorCadastrarPostosComponent
   ],
+  entryComponents: [],
   imports: [
-    BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    AngularFireModule.initializeApp(environment.firebase), BrowserAnimationsModule, AppRoutingModule,
-    AngularFirestoreModule,
-    AngularFireAuthModule,
     FormsModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatSnackBarModule,
-    MatCardModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatTableModule
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    AngularFirestore,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    LoginGuardService,
+    HomeGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

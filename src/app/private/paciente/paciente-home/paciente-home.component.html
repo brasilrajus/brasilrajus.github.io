@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light" class="ion-text-center">Paciente</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deslogar()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_none">
+  <ion-card class="shadow_none">
+
+    <ion-button class="menu_home ion-margin-bottom" routerLink="/postos-atendimento">
+      Postos de atendimento
+      <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
+    </ion-button>
+
+    <ion-button class="menu_home ion-margin-bottom" routerLink="/agenda-medica">Agenda Médica
+      <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
+    </ion-button>
+
+    <ion-button class="menu_home ion-margin-bottom" routerLink="/telefones-emergenciais">Telefones Emergênciais
+      <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
+    </ion-button>
+
+    <ion-button class="menu_home ion-margin-bottom" routerLink="">Minhas informações
+      <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
+    </ion-button>
+
+    <ion-button class="menu_home ion-margin-bottom" routerLink="">Alterar senha
+      <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
+    </ion-button>
+
+  </ion-card>
+</ion-content>

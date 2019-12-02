@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Rajus Alagoas</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_none" class="swiper-no-swiping bg_none">
+  <ion-slides>
+    <ion-slide>
+      <div>
+        <ion-card class="shadow_none">
+          <ion-card-title>Consultar paciente</ion-card-title>
+
+          <ion-item class="bg_none" lines="none">
+            <ion-input type="text" placeholder="Digite o CPF do paciente" [(ngModel)]="paciente.cpf" name="paciente.cpf"
+              (keyup)="validarCpf()">
+              <ion-icon name="business" color="light" [ngClass]="paciente.cpfValidator"></ion-icon>
+            </ion-input>
+          </ion-item>
+
+          <ion-row justify-content-end>
+            <ion-button (click)="consultar()">Consultar</ion-button>
+          </ion-row>
+        </ion-card>
+
+        <ion-card class="shadow_none" ion-text-center>
+          <ion-card-title class="ion-text-center" color="primary"
+            *ngIf="this.auth.PacienteAtivo.user.nome !== undefined">
+            Paciente</ion-card-title>
+          <ion-card-subtitle class="ion-text-center">{{this.auth.PacienteAtivo.user.nome}}</ion-card-subtitle>
+          <ion-card-content>
+            <ion-row>
+              <ion-item class="bg_none" lines="none">
+                <ion-label *ngIf="this.auth.PacienteAtivo.user.nome !== undefined">
+                  <p></p>
+                  <p>Email: {{this.auth.PacienteAtivo.user.email}}</p>
+                  <p>Telefone: {{this.auth.PacienteAtivo.user.telefone}}</p>
+                  <p>Sus: {{this.auth.PacienteAtivo.user.sus}}</p>
+                </ion-label>
+              </ion-item>
+
+              <ion-item class="bg_none" lines="none" *ngIf="this.auth.PacienteAtivo.user.dados !== undefined">
+                <ion-label>
+                  <p>Idade: </p>
+                  <p>Peso: </p>
+                  <p>IMC: </p>
+                  <p>Pressão: </p>
+                </ion-label>
+              </ion-item>
+            </ion-row>
+
+            <ion-card-subtitle class="ion-text-center" *ngIf="this.auth.PacienteAtivo.user.status === 'pré cadastrado'">
+              Este
+              usuário não foi ativado ainda</ion-card-subtitle>
+            <ion-row justify-content-end>
+              <ion-button *ngIf="this.auth.PacienteAtivo.user.status === 'pré cadastrado'" (click)="ativarUsuario()">
+                Ativar</ion-button>
+            </ion-row>
+
+            <ion-row justify-content-end>
+              <ion-button *ngIf="this.auth.PacienteAtivo.user.status === 'ativado'" (click)="atendimento('inicio')">
+                Iniciar atendimento</ion-button>
+            </ion-row>
+          </ion-card-content>
+
+        </ion-card>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="shadow_none">
+        <ion-card-title>Informações do paciente</ion-card-title>
+        <ion-card-content>
+
+          <ion-row>
+
+            <ion-item>
+              <ion-label>
+                <h2>Informações pessoais</h2>
+                <p>Nome:</p>
+                <p>Data de nascimento:</p>
+                <p>Data de nascimento:</p>
+                <p>Idade:</p>
+              </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-margin">
+              <ion-label>
+                <h2>Informações médicas</h2>
+                <p>Peso:</p>
+                <p>Altura:</p>
+                <p>Pressão:</p>
+              </ion-label>
+            </ion-item>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-button (click)="atendimento('toMedicacoes')">Avançar</ion-button>
+          </ion-row>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="shadow_none">
+        <ion-card-title class="ion-margin">Medicações atuais</ion-card-title>
+
+        <ion-row>
+          <ion-item class="bg_none" lines="none" class="item_remedio ion-margin">
+            <ion-label>
+              <h3>Nome: Paracetamol</h3>
+              <p>Período: a cada 6 horas </p>
+              <p>Tempo restante: 4 dias</p>
+              <ion-button color="danger">Excluir</ion-button>
+
+            </ion-label>
+          </ion-item>
+          <ion-item class="bg_none" lines="none" class="item_remedio ion-margin">
+            <ion-label>
+              <h3>Nome: Paracetamol</h3>
+              <p>Período: a cada 6 horas </p>
+              <p>Tempo restante: 4 dias</p>
+            </ion-label>
+
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-button>Adicionar nova medicação</ion-button>
+        </ion-row>
+
+        <ion-row>
+          <ion-button (click)="atendimento('toMedicacoes')">Retornar</ion-button>
+          <ion-button (click)="atendimento('toMedicacoes')">Avançar</ion-button>
+        </ion-row>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="shadow_none">
+        <ion-card-title>Conclusão</ion-card-title>
+        <ion-card-content>
+          <h2>Informações adicionadas</h2>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

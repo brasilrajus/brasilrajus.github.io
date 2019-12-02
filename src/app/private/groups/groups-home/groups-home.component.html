@@ -1,0 +1,25 @@
+<ion-content class="bg_none ion-margin">
+
+  <img alt="Logo Rajus" class="align_center block" src="../../../assets/imgs/rajus.svg">
+
+  <ion-card class="shadow_none ion-text-center">
+
+    <ion-card-header>
+      <ion-card-title color="primary">Rajus</ion-card-title>
+      <ion-card-subtitle>Responsabilidade e controle dos resíduos contaminados para o equilíbrio e segurança do meio
+        ambiente</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/administrador">Administrador</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/paciente">Paciente</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/prescritor">Prescritor</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/root">Root</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-row justify-content-end>
+    <ion-button class="ion-margin-bottom ion-margin-end" color="danger" (click)="deslogar()">Deslogar</ion-button>
+  </ion-row>
+</ion-content>

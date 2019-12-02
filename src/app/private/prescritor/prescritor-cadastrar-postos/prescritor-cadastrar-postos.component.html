@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Rajus Alagoas</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_none">
+  <ion-card class="shadow_none">
+    <ion-card-title class="ion-text-center ion-margin" color="primary">Rajus Brasil</ion-card-title>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Estabelecimento" [(ngModel)]="estabelecimento.nome"
+        name="estabelecimento.nome" required (keyup)="formatarNome()">
+        <ion-icon name="business" color="light" [ngClass]="estabelecimento.nomeValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="CNPJ" [(ngModel)]="estabelecimento.cnpj" name="estabelecimento.cnpj" required (keyup)="formatarCNPJ()" maxlength="18">
+        <ion-icon name="clipboard" color="light" [ngClass]="estabelecimento.cnpjValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="CEP" [(ngModel)]="estabelecimento.cep" name="estabelecimento.cep" required (keyup)="formatarCEP()" maxlength="9">
+        <ion-icon src="../../../../assets/icons/cep.svg" [ngClass]="estabelecimento.cepValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-item class="bg_none input_endereco" lines="none">
+        <ion-input type="text" placeholder="Endereço" [(ngModel)]="estabelecimento.endereco"
+          name="estabelecimento.endereco" (keyup)="formatarEndereco()" required>
+          <ion-icon src="../../../../assets/icons/address.svg" [ngClass]="estabelecimento.enderecoValidator"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="bg_none" lines="none">
+        <ion-input type="number" placeholder="Nº" class="input_numero" [(ngModel)]="estabelecimento.numero"
+          name="estabelecimento.numero" (keyup)="formatarEndereco()" required></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-item class="bg_none" lines="none">
+      <ion-input type="text" placeholder="Bairro" [(ngModel)]="estabelecimento.bairro" name="estabelecimento.bairro" required (keyup)="formatarBairro()">
+        <ion-icon src="../../../../assets/icons/cep.svg" [ngClass]="estabelecimento.bairroValidator"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-item class="bg_none input_endereco" lines="none">
+        <ion-input type="text" placeholder="Cidade" [(ngModel)]="estabelecimento.cidade"
+          name="estabelecimento.cidaade" (keyup)="formatarCidade()" required>
+          <ion-icon src="../../../../assets/icons/address.svg" [ngClass]="estabelecimento.cidadeValidator"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="bg_none" lines="none">
+        <ion-input type="text" placeholder="AL" class="input_numero" [(ngModel)]="estabelecimento.estado"
+          name="estabelecimento.estado" required></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row justify-content-between class="ion-margin">
+      <ion-button (click)="limpar()">Limpar campos</ion-button>
+      <ion-button (click)="adicionar()">Adicionar estabelecimento</ion-button>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
