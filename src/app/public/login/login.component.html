@@ -18,7 +18,7 @@
         </ion-input>
       </ion-item>
 
-      <ion-item class="ion-margin-bottom" *ngIf="inputPassword">
+      <ion-item class="ion-margin-bottom" *ngIf="inputPassword" id="input-password">
         <ion-label position="floating" color="primary">Senha</ion-label>
         <ion-input type="password" [(ngModel)]="user.password" name="user.password"></ion-input>
       </ion-item>
@@ -57,10 +57,10 @@
       </ion-slides>
 
       <ion-row justify-content-around>
-        <ion-card-subtitle color="primary" class="pointer text-transform_none" (click)="alternarBotoes(0)">Acessar</ion-card-subtitle>
-        <ion-card-subtitle color="primary" class="pointer text-transform_none" (click)="alternarBotoes(1)">Recuperar senha
-        </ion-card-subtitle>
-        <ion-card-subtitle color="primary" class="pointer text-transform_none" (click)="alternarBotoes(2)">Cadastrar</ion-card-subtitle>
+        <ion-button id="button-acessar" class="pointer text-transform_none buttons-bottom" (click)="alternarBotoes(0)">Acessar</ion-button>
+        <ion-button id="button-recuperar" class="pointer text-transform_none buttons-bottom" (click)="alternarBotoes(1)">Recuperar senha
+        </ion-button>
+        <ion-button id="button-cadastrar" class="pointer text-transform_none buttons-bottom" (click)="alternarBotoes(2)">Cadastrar</ion-button>
       </ion-row>
 
     </ion-card-content>

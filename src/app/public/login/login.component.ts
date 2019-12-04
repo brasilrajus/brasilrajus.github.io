@@ -21,9 +21,11 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     public load: LoadingService,
     private api: ApisExternasService
-  ) { }
+  ) {  }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.alternarBotoes(0);
+  }
 
   acessarOrRegister(func: string) {
     if (this.user.email != null && this.user.email != undefined && this.user.password != null && this.user.password != undefined) {
@@ -44,14 +46,26 @@ export class LoginComponent implements OnInit {
     if (i == 0) { 
       this.slidesGoogle.slideTo(0); 
       this.inputPassword = true;
+      document.getElementById('button-acessar').style.display = "none";
+      document.getElementById('button-recuperar').style.display = "block";
+      document.getElementById('button-cadastrar').style.display = "block";
+      document.getElementById('input-password').style.display = "block";
     } 
     else if(i == 1) { 
       this.slidesGoogle.slideTo(0);
       this.inputPassword = false; 
+      document.getElementById('button-recuperar').style.display = "none";
+      document.getElementById('button-acessar').style.display = "block";
+      document.getElementById('button-cadastrar').style.display = "block";
+      document.getElementById('input-password').style.display = "none";
     }    
     else {
       this.slidesGoogle.slideTo(1);
       this.inputPassword = true;
+      document.getElementById('button-cadastrar').style.display = "none";
+      document.getElementById('button-acessar').style.display = "block";
+      document.getElementById('button-recuperar').style.display = "block";
+      document.getElementById('input-password').style.display = "block";
     }
   }
 

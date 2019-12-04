@@ -10,10 +10,8 @@ import * as firebase from 'firebase/app';
 export class GroupsHomeComponent implements OnInit {
 
   constructor(
-    private auth: AuthService
-  ) { 
-    this.mostrarMenus()
-  }
+    public auth: AuthService
+  ) { }
 
   ngOnInit() { }
 
@@ -21,15 +19,4 @@ export class GroupsHomeComponent implements OnInit {
     this.auth.signOut();
   }
 
-  mostrarMenus() {
-    let user = new Promise((response, reject) => {
-      firebase.auth().currentUser;
-    })
-    .then(() => {
-      console.log(user);
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
 }

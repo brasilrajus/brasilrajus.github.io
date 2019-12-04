@@ -1,14 +1,17 @@
-.menu_home {
-    width: 320px;   
-    height: 45px;
-    margin: 15px auto;
-    display: block;
-    text-transform: capitalize;
-    font-weight: 600;
-    text-align: left;
-
-    ion-icon {
-        position: absolute;
-        right: 15px;
-    }
+ion-toolbar {
+    --background: url('./../../../../assets/imgs/bg.jpg')
 }
+ion-row {
+    margin-bottom: 50px;
+}
+.card-menu-paciente {
+    background: #f0ffff;
+    border-radius: 15px;
+}
+.card-menu-paciente img {
+    margin-top: 10px;
+    width: 90%;
+}
+
+@media only screen and (orientation: portrait) { .card-menu-paciente { width: 40%; margin: 5%} };
+@media only screen and (orientation: landscape) { .card-menu-paciente { width: 200px;} };

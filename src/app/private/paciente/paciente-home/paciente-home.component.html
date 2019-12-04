@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title color="light" class="ion-text-center">Paciente</ion-title>
+    <ion-title color="light">Paciente</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="deslogar()">
+      <ion-button (click)="deslogar()" color='light'>
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content class="bg_none">
-  <ion-card class="shadow_none">
+  <!-- <ion-card class="shadow_none">
 
     <ion-button class="menu_home ion-margin-bottom" routerLink="/postos-atendimento">
       Postos de atendimento
@@ -36,5 +36,14 @@
       <ion-icon name="log-in" color="light" class="ion-margin-start"></ion-icon>
     </ion-button>
 
-  </ion-card>
+  </ion-card> -->
+    <ion-row justify-content-start>
+
+      <ion-card class="card-menu-paciente ion-padding" *ngFor="let card of cardsMenu" routerLink="{{card.link}}">
+        <ion-card-subtitle color="primary" class="ion-text-center">{{card.title}}</ion-card-subtitle>
+        <img src="{{card.img}}">
+      </ion-card>
+
+    </ion-row>
+
 </ion-content>

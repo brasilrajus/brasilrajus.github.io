@@ -16,7 +16,7 @@ export class AuthService {
     user: {}
   };
   public uid: string = '';
-  public userData: any;
+  public userData: any = {user: {perfil: []}};
 
   constructor(
     private afs: AngularFirestore,
@@ -36,6 +36,8 @@ export class AuthService {
       .subscribe(result => {
         this.uid = user;
         this.userData = result;
+
+        console.log(this.userData)
 
         firebase.firestore().collection('users').doc(this.uid).get()
           .then((res) => {

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdministradorHomeComponent implements OnInit {
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
   ) { }
 
   ngOnInit() {}

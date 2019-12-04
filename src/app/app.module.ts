@@ -1,3 +1,4 @@
+import { PacienteCaixaDeFerramentasComponent } from './private/paciente/paciente-caixa-de-ferramentas/paciente-caixa-de-ferramentas.component';
 import { LoginGuardService } from './guards/login-guard.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,18 +18,14 @@ import { environment } from '../environments/environment';
  *******************************/
 import { AppComponent } from './app.component';
 import { LoginComponent } from './public/login/login.component';
-import { AlterarSenhaComponent } from './private/paciente/alterar-senha/alterar-senha.component';
 import { AgendaMedicaComponent } from './private/paciente/agenda-medica/agenda-medica.component';
 import { PrescritorHomeComponent } from './private/prescritor/prescritor-home/prescritor-home.component';
-import { PrescritorCadastrarPostosComponent } from './private/prescritor/prescritor-cadastrar-postos/prescritor-cadastrar-postos.component';
 import { AdministradorHomeComponent } from './private/administrador/administrador-home/administrador-home.component';
 import { RootHomeComponent } from './private/root/root-home/root-home.component';
 import { PacienteHomeComponent } from './private/paciente/paciente-home/paciente-home.component';
 import { GroupsHomeComponent } from './private/groups/groups-home/groups-home.component';
 import { PreCadastroComponent } from './public/pre-cadastro/pre-cadastro.component';
-import { MinhasInformacoesComponent } from './private/paciente/minhas-informacoes/minhas-informacoes.component';
 import { PrescritorConsultarUsuariosComponent } from './private/prescritor/prescritor-consultar-usuarios/prescritor-consultar-usuarios.component';
-import { PostosDeAtendimentoComponent } from './public/postos-de-atendimento/postos-de-atendimento.component';
 import { TelefonesEmergenciaisComponent } from './public/telefones-emergenciais/telefones-emergenciais.component';
 import { AdministradorCadastrarPostosComponent } from './private/administrador/administrador-cadastrar-postos/administrador-cadastrar-postos.component';
 import { HomePrecadastroComponent } from './public/home-precadastro/home-precadastro.component';
@@ -46,6 +43,9 @@ import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { FormsModule } from '@angular/forms';
+import { PostosAtendimentoComponent } from './private/auth/postos-atendimento/postos-atendimento.component';
+import { AlterarSenhaComponent } from './private/auth/alterar-senha/alterar-senha.component';
+import { MinhasInformacoesComponent } from './private/auth/minhas-informacoes/minhas-informacoes.component';
 
 firebase.initializeApp(environment.firebase);
 
@@ -58,16 +58,16 @@ firebase.initializeApp(environment.firebase);
     RootHomeComponent,
     AdministradorHomeComponent,
     PrescritorHomeComponent,
-    PrescritorCadastrarPostosComponent,
     PreCadastroComponent,
     HomePrecadastroComponent,
     PrescritorConsultarUsuariosComponent,
-    PostosDeAtendimentoComponent,
     TelefonesEmergenciaisComponent,
     AgendaMedicaComponent,
+    AdministradorCadastrarPostosComponent,
+    PacienteCaixaDeFerramentasComponent,
+    PostosAtendimentoComponent,
     AlterarSenhaComponent,
-    MinhasInformacoesComponent,
-    AdministradorCadastrarPostosComponent
+    MinhasInformacoesComponent
   ],
   entryComponents: [],
   imports: [
