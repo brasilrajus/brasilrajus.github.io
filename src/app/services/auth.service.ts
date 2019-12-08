@@ -51,8 +51,6 @@ export class AuthService {
   };
 
   ifDisconnected() {
-    this.route.navigate(['']);
-    console.log('is disconected')
   };
 
 

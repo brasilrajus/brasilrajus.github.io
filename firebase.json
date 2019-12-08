@@ -1,25 +1,6 @@
 {
   "hosting": {
-    "headers": [ {
-      "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-      "headers": [ {
-        "key": "Access-Control-Allow-Origin",
-        "value": "*"
-      } ]
-    }, {
-      "source": "**/*.@(jpg|jpeg|gif|png|webp|js)",
-      "headers": [ {
-        "key": "Cache-Control",
-        "value": "max-age=31104000000"
-      } ]
-    }, {
-      "source": "404.html",
-      "headers": [ {
-        "key": "Cache-Control",
-        "value": "max-age=300"
-      } ]
-    } ],
-    "public": "www",
+    "public": "www/",
     "ignore": [
       "firebase.json",
       "**/.*",

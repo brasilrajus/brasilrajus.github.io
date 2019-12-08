@@ -20,7 +20,7 @@ export class LoginGuardService implements CanActivate {
     return new Promise((resolve, reject) => {
       this.afAuth.user.subscribe((user) => {
         if (user) {
-          this.navCtrl.navigateRoot(['/home']);
+          this.navCtrl.navigateForward(['/home']);
           resolve(false);
         } else {
           resolve(true);

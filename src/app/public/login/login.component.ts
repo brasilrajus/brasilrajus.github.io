@@ -23,9 +23,7 @@ export class LoginComponent implements OnInit {
     private api: ApisExternasService
   ) {  }
 
-  ngOnInit() { 
-    this.alternarBotoes(0);
-  }
+  ngOnInit() { }
 
   acessarOrRegister(func: string) {
     if (this.user.email != null && this.user.email != undefined && this.user.password != null && this.user.password != undefined) {

@@ -10,7 +10,7 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class AdministradorCadastrarPostosComponent implements OnInit {
 
-  public nome; public cnpj; public cep; public bairro; public endereco; public cidade; public numero;
+  public nome; public cnpj; public cep; public bairro; public endereco; public cidade; public numero; public estado;
 
   public estabelecimento: any = {
     nomeValidator: 'validate_base',

@@ -20,7 +20,7 @@ export class HomeGuardService implements CanActivate {
     return new Promise((resolve, reject) => {
       this.afAuth.user.subscribe((user) => {
         if (!user) {
-          this.navCtrl.navigateRoot(['']);
+          this.navCtrl.navigateForward(['']);
           resolve(false);
         } else {
           resolve(true);
