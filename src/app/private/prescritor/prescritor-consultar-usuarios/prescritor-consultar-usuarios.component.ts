@@ -13,6 +13,9 @@ export class PrescritorConsultarUsuariosComponent implements OnInit {
 
   @ViewChild(IonSlides, { static: true }) slides: IonSlides
 
+  public inputsPrescritor: boolean = false;
+  public informacoesMedicas: any  = {}
+
   public paciente: any = {
     cpfValidator: 'validate_base'
   };
@@ -41,6 +44,12 @@ export class PrescritorConsultarUsuariosComponent implements OnInit {
 
   atendimento(etapa: string) {
     etapa == 'inicio' ? this.slides.slideNext() : 
-    etapa == 'toMedicacoes' ? this.slides.slideNext() : console.log()
+    etapa == 'toMedicacoes' ? this.slides.slideNext() : 
+    etapa == 'return' ? this.slides.slidePrev() : console.log();
+  }
+
+  atualizarInformacoes(etapa:string) {
+    etapa === 'iniciar' ? this.inputsPrescritor = true :
+    etapa === 'finalizar' ? console.log('finalizado') : console.log('error');
   }
 }

@@ -39,14 +39,23 @@ body {
 .align_center { margin: auto; };
 .bg_none { --background: none; }
 .block { display: block; }
-.shadow_none { box-shadow: none; text-shadow: none; }
+.margin_l { margin-left: 1em; }
+.margin_ll { margin-left: 2em; }
+.margin_r { margin-right: 1em; }
+.margin_none { margin: 0; }
+.margin_tnone { margin-top: 0; }
+.min_width_360 { min-width: 360px; }
+.overflow_visible { overflow: visible; }
+.padding { padding: 8px; }
 .pointer { cursor: pointer; }
-.text-transform_none { text-transform: none;}
+.shadow_none { box-shadow: none; text-shadow: none; }
+.text-transform_none { text-transform: none; }
 
 /*******************************
 * Cores
 *******************************/
 .color { color: #0459A9; }
+.bg_white { background: #fff; }
 .validate_base { background: blue; }
 .validate_false { background: #f00; }
 .validate_true { background: #070};

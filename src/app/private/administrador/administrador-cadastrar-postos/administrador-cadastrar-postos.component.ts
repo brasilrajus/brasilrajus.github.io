@@ -10,6 +10,8 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class AdministradorCadastrarPostosComponent implements OnInit {
 
+  public nome; public cnpj; public cep; public bairro; public endereco; public cidade; public numero;
+
   public estabelecimento: any = {
     nomeValidator: 'validate_base',
     cnpjValidator: 'validate_base',
@@ -34,7 +36,7 @@ export class AdministradorCadastrarPostosComponent implements OnInit {
       this.estabelecimento.enderecoValidator == 'validate_true' &&
       this.estabelecimento.bairroValidator == 'validate_true' &&
       this.estabelecimento.cidadeValidator == 'validate_true' ?
-      this.auth.postEstabelecimento(this.estabelecimento, this.estabelecimento.cnpj) :
+      this.auth.postEstabelecimento(this.cnpj, this.nome, this.cep, this.bairro, this.endereco, this.cidade, this.numero) :
       this.toast.toastShow('Por gentileza, preencha todos os campos', 'toast_red');
 
   }
@@ -54,15 +56,15 @@ export class AdministradorCadastrarPostosComponent implements OnInit {
    * Formatar Inputs
    ********************************/
   formatarCNPJ() {
-    this.estabelecimento.cnpj = this.validator.formatarCNPJ(this.estabelecimento.cnpj.replace(/\D/g, ''));
-    this.validator.validarCNPJ(this.estabelecimento.cnpj) ? this.estabelecimento.cnpjValidator = 'validate_true' : this.estabelecimento.cnpjValidator = 'validate_false';
+    this.cnpj = this.validator.formatarCNPJ(this.cnpj.replace(/\D/g, ''));
+    this.validator.validarCNPJ(this.cnpj) ? this.estabelecimento.cnpjValidator = 'validate_true' : this.estabelecimento.cnpjValidator = 'validate_false';
   }
-  formatarNome() { this.estabelecimento.nome.length >= 3 ? this.estabelecimento.nomeValidator = 'validate_true' : this.estabelecimento.nomeValidator = 'validate_false'; }
-  formatarBairro() { this.estabelecimento.bairro.length >= 3 ? this.estabelecimento.bairroValidator = 'validate_true' : this.estabelecimento.bairroValidator = 'validate_false'; }
-  formatarEndereco() { this.estabelecimento.endereco.length < 3 || this.estabelecimento.numero.length < 1 ? this.estabelecimento.enderecoValidator = 'validate_false' : this.estabelecimento.enderecoValidator = 'validate_true'; }
-  formatarCidade() { this.estabelecimento.cidade.length < 3 ? this.estabelecimento.cidadeValidator = 'validate_false' : this.estabelecimento.cidadeValidator = 'validate_true'; }
+  formatarNome() { this.nome.length >= 3 ? this.estabelecimento.nomeValidator = 'validate_true' : this.estabelecimento.nomeValidator = 'validate_false'; }
+  formatarBairro() { this.bairro.length >= 3 ? this.estabelecimento.bairroValidator = 'validate_true' : this.estabelecimento.bairroValidator = 'validate_false'; }
+  formatarEndereco() { this.endereco.length < 3 || this.numero.length < 1 ? this.estabelecimento.enderecoValidator = 'validate_false' : this.estabelecimento.enderecoValidator = 'validate_true'; }
+  formatarCidade() { this.cidade.length < 3 ? this.estabelecimento.cidadeValidator = 'validate_false' : this.estabelecimento.cidadeValidator = 'validate_true'; }
   formatarCEP() {
-    this.estabelecimento.cep = this.validator.formatarCEP(this.estabelecimento.cep.replace(/\D/g, ''));
-    this.estabelecimento.cep.length == 9 ? this.estabelecimento.cepValidator = 'validate_true' : this.estabelecimento.cepValidator = 'validate_false';
+    this.cep = this.validator.formatarCEP(this.cep.replace(/\D/g, ''));
+    this.cep.length == 9 ? this.estabelecimento.cepValidator = 'validate_true' : this.estabelecimento.cepValidator = 'validate_false';
   }
 }

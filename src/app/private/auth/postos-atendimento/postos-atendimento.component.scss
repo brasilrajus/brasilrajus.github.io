@@ -1,0 +1,15 @@
+ion-toolbar {
+    --background: url('./../../../../assets/imgs/bg.jpg')
+}
+.pontos {
+    background: #fff;
+
+    ion-icon {
+        position: absolute;
+        right: 25px;
+        bottom: 35px;
+    }
+}
+ion-card-title {
+    margin: 7px 0 0 0;
+}

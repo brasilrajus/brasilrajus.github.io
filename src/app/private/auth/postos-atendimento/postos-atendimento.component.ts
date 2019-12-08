@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostosAtendimentoComponent implements OnInit {
 
+  public cards:any = [
+    {nome: 'Farmácia do trabalhador', endereco: 'Rua Tereza de albuquerque', link: ''},
+    {nome: 'Farmácia do trabalhador', endereco: 'Rua Tereza de albuquerque', link: ''},
+  ]
+
   constructor() { }
 
   ngOnInit() {}

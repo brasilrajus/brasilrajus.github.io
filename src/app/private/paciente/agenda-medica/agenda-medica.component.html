@@ -1,39 +1,50 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Rajus Alagoas</ion-title>
+  <ion-toolbar>
+    <ion-title color="light">Rajus Alagoas</ion-title>
     <ion-buttons slot="end">
-      <ion-back-button></ion-back-button>
+      <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="bg_none">
+<ion-content class="ion-padding bg_none min_width_360">
 
-  <ion-card class="ion-text-center">
-    <ion-card-title>Minha agenda</ion-card-title>
-    
-    <ion-card class="ion-text-start">
-      <ion-card-title>Hoje</ion-card-title>
-      <ion-card-subtitle>01 de dezembro de 2019</ion-card-subtitle>
+  <div id="timeline">
+    <div id="divisoria"></div>
+
+    <ion-card class="bg_white margin_ll margin_tnone overflow_visible shadow_none" *ngFor="let pos of agenda">
+      <ion-row>
+
+        <ion-label class="circle-timeline">
+          <ion-icon name="circle" color="danger"></ion-icon>
+        </ion-label>
+
+        <ion-label class="margin_r margin_l padding">
+          <h1 class="color">{{pos.hora}}</h1>
+          <h2><strong>Medicação: {{pos.medicacao}}</strong></h2>
+          <p>Posologia: {{pos.posologia}}</p>
+        </ion-label>
+
+        <ion-label class="clock-icon">
+          <ion-icon name="clock" color="warning" size="large"></ion-icon>
+        </ion-label>
+      </ion-row>
     </ion-card>
+  </div>
 
-    <ion-label>Próximas tratamentos</ion-label>
+  <!-- <app-timeline endIcon="call">
+    <timeline-item *ngFor="let item of items">
+      <timeline-time [time]="item.time"></timeline-time>
+      <ion-icon [name]="item.icon"></ion-icon>
+      <ion-card>
+        <ion-card-header>
+          {{item.title}}
+        </ion-card-header>
+        <ion-card-content>
+          {{item.content}}
+        </ion-card-content>
+      </ion-card>
+    </timeline-item>
 
-    <ion-item class="ion-margin">
-      <ion-icon name="more"></ion-icon>
-      <ion-label>
-        <h2>16:00</h2>
-        <p>Paracetamol: 1 comprimido</p>
-      </ion-label>
-    </ion-item> 
-
-    <ion-item>
-      <ion-icon name="more"></ion-icon>
-      <ion-label>
-        <h2>18:00</h2>
-        <p>Diazepan: 1 comprimido</p>
-      </ion-label>
-    </ion-item> 
-    
-  </ion-card>
+  </app-timeline> -->
 </ion-content>

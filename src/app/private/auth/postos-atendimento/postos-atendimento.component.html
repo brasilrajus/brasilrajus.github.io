@@ -1,3 +1,18 @@
-<p>
-  postos-atendimento works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="light">Postos de atendimento</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_none">
+  <ion-card class="pontos ion-padding" *ngFor="let posto of cards">
+    <ion-card-subtitle>Remédios encontrados: Paracetamol, Diazepan.</ion-card-subtitle>
+    <ion-card-title color="primary">Farmacia do trabalhador </ion-card-title>
+    <ion-card-subtitle>Endereço: Rua Tereza de Albuquerque, 45.</ion-card-subtitle>
+
+    <ion-icon size="large" name="map" color="primary"></ion-icon>
+  </ion-card>
+</ion-content>

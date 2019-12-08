@@ -14,6 +14,7 @@
         <ion-card class="shadow_none">
           <ion-card-title>Consultar paciente</ion-card-title>
 
+          <ion-row justify-content-around>
           <ion-item class="bg_none" lines="none">
             <ion-input type="text" placeholder="Digite o CPF do paciente" [(ngModel)]="paciente.cpf" name="paciente.cpf"
               (keyup)="validarCpf()">
@@ -21,7 +22,6 @@
             </ion-input>
           </ion-item>
 
-          <ion-row justify-content-end>
             <ion-button (click)="consultar()">Consultar</ion-button>
           </ion-row>
         </ion-card>
@@ -75,31 +75,41 @@
         <ion-card-title>Informações do paciente</ion-card-title>
         <ion-card-content>
 
-          <ion-row>
+          <ion-row justify-content-start>
 
-            <ion-item>
+            <ion-item class="ion-margin-end bg_none" lines="none">
               <ion-label>
-                <h2>Informações pessoais</h2>
-                <p>Nome:</p>
-                <p>Data de nascimento:</p>
-                <p>Data de nascimento:</p>
-                <p>Idade:</p>
+                <ion-card-subtitle color="primary">Informações pessoais</ion-card-subtitle>
+                <p>Nome: Jonas Ewerton Vieira Magalhães</p>
+                <p>Data de nascimento: 01/09/1990</p>
+                <p>Idade: 29 anos</p>
               </ion-label>
             </ion-item>
 
-            <ion-item class="ion-margin">
+            <ion-item class="bg_none" lines="none">
               <ion-label>
-                <h2>Informações médicas</h2>
-                <p>Peso:</p>
-                <p>Altura:</p>
-                <p>Pressão:</p>
+                <ion-card-subtitle color="primary">Informações médicas</ion-card-subtitle>
+                <p>Peso: 60Kg</p> <input type="text" *ngIf="inputsPrescritor">
+                <p>Altura: 1,85m</p> <input type="number" *ngIf="inputsPrescritor">
+                <p>Pressão: 12/8</p> <input type="number" *ngIf="inputsPrescritor"><input type="number" *ngIf="inputsPrescritor">
+                <p>Alergias: Paracetamol</p> <input type="text" *ngIf="inputsPrescritor">
               </ion-label>
             </ion-item>
 
           </ion-row>
 
           <ion-row>
-            <ion-button (click)="atendimento('toMedicacoes')">Avançar</ion-button>
+            <ion-label>
+              <ion-card-subtitle class="ion-text-start">Medicações atuais</ion-card-subtitle>
+              <p><strong>Paracetamol</strong> - A cada 2 horas</p>
+            </ion-label>
+          </ion-row>
+
+          <ion-row justify-content-end>
+            <ion-button *ngIf="!inputsPrescritor" (click)="atualizarInformacoes('iniciar')">Atualizar informações</ion-button>
+            <ion-button *ngIf="inputsPrescritor" (click)="atualizarInformacoes('finalizar')">Concluir atualizações</ion-button>
+            <ion-button *ngIf="!inputsPrescritor" (click)="atendimento('return')">Retornar</ion-button>
+            <ion-button *ngIf="!inputsPrescritor" (click)="atendimento('toMedicacoes')">Avançar</ion-button>
           </ion-row>
 
         </ion-card-content>
@@ -135,7 +145,7 @@
         </ion-row>
 
         <ion-row>
-          <ion-button (click)="atendimento('toMedicacoes')">Retornar</ion-button>
+          <ion-button (click)="atendimento('return')">Retornar</ion-button>
           <ion-button (click)="atendimento('toMedicacoes')">Avançar</ion-button>
         </ion-row>
       </ion-card>

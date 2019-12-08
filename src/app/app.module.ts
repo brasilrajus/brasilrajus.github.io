@@ -68,6 +68,7 @@ firebase.initializeApp(environment.firebase);
     PostosAtendimentoComponent,
     AlterarSenhaComponent,
     MinhasInformacoesComponent
+
   ],
   entryComponents: [],
   imports: [

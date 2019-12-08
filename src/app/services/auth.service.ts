@@ -16,7 +16,7 @@ export class AuthService {
     user: {}
   };
   public uid: string = '';
-  public userData: any = {user: {perfil: []}};
+  public userData: any = { user: { perfil: [] } };
 
   constructor(
     private afs: AngularFirestore,
@@ -28,7 +28,6 @@ export class AuthService {
     this.auth.onAuthStateChanged((user: any) => {
       user ? this.ifConnected(user.uid) : this.ifDisconnected();
     })
-
   }
 
   ifConnected(user: any) {
@@ -115,40 +114,6 @@ export class AuthService {
       });
   }
 
-  verifyProfile() {
-
-  }
-
-  postEstabelecimento(estabelecimento: any, cnpj: string) {
-    let cnpjAdd = cnpj.replace(/\D/g, '');
-
-    firebase.firestore().collection('estabelecimentos').doc(cnpjAdd).get()
-      .then((res) => {
-        if (res.data() == undefined) {
-          delete estabelecimento.nomeValidator;
-          delete estabelecimento.cnpjValidator;
-          delete estabelecimento.cepValidator;
-          delete estabelecimento.enderecoValidator;
-          delete estabelecimento.cidadeValidator;
-          this.load.loadingGreen('Adicionando estabelecimento')
-          this.afs.collection('estabelecimentos').doc(cnpjAdd + '/').set({
-            estabelecimento
-          })
-            .then(() => {
-              this.loadCtrl.dismiss();
-              this.toast.toastShow('Estabelecimento adicionado com sucesso', 'toast_green');
-            })
-            .catch((err) => {
-              this.loadCtrl.dismiss();
-            });
-        }
-        else {
-          this.toast.toastShow('Este CNPJ já está cadastrado!', 'toast_red')
-        }
-      })
-
-  }
-
   adicionarUser(user: any, cpf: string) {
 
     delete user.nomeValidator;
@@ -181,6 +146,7 @@ export class AuthService {
       .then((snap) => {
         snap.forEach(doc => {
           this.PacienteAtivo = doc.data();
+          console.log(this.PacienteAtivo)
         })
       })
   }
@@ -210,4 +176,52 @@ export class AuthService {
     return this.userData;
   }
 
+  postEstabelecimento(cnpj: string, nome, cep, bairro, endereco, cidade, numero) {
+    console.log(cnpj)
+    let cnpjAdd = cnpj.replace(/\D/g, '');
+
+    firebase.firestore().collection('estabelecimentos').doc(cnpjAdd).get()
+      .then((res) => {
+        if (res.data() == undefined) {
+          this.load.loadingGreen('Adicionando estabelecimento')
+          this.afs.collection('estabelecimentos').doc(cnpjAdd + '/').set({
+            '_nome': nome,
+            'cnpj': cnpj,
+            'cep': cep,
+            'bairro': bairro,
+            'endereco': endereco,
+            'cidade': cidade,
+            'numero': numero
+          })
+            .then(() => {
+              this.loadCtrl.dismiss();
+              this.toast.toastShow('Estabelecimento adicionado com sucesso', 'toast_green');
+            })
+            .catch((err) => {
+              this.loadCtrl.dismiss();
+            });
+        }
+        else {
+          this.toast.toastShow('Este CNPJ já está cadastrado!', 'toast_red')
+        }
+      })
+  }
+
+  getEstabelecimentosForMedical(remedio: string, estado: string, cidade: string) {
+    let estabelecimentosComMedicacao: any = [];
+    firebase.firestore().collection('estabelecimentos')
+      .where('estado', '==', estado)
+      .where('cidade', '==', cidade)
+      .where('medicacoes', 'array-contains', remedio)
+      .get()
+      .then((snap) => {
+        snap.forEach((doc) => {
+          estabelecimentosComMedicacao.push(doc.data());
+        })
+        console.log(estabelecimentosComMedicacao);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 }
