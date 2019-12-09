@@ -260,9 +260,6 @@ Apache-2.0
    limitations under the License.
 
 
-@firebase/component
-Apache-2.0
-
 @firebase/database
 Apache-2.0
 

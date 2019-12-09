@@ -1,9 +1,7 @@
-import { PacienteCaixaDeFerramentasComponent } from './private/paciente/paciente-caixa-de-ferramentas/paciente-caixa-de-ferramentas.component';
-import { LoginGuardService } from './guards/login-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -29,10 +27,15 @@ import { PrescritorConsultarUsuariosComponent } from './private/prescritor/presc
 import { TelefonesEmergenciaisComponent } from './public/telefones-emergenciais/telefones-emergenciais.component';
 import { AdministradorCadastrarPostosComponent } from './private/administrador/administrador-cadastrar-postos/administrador-cadastrar-postos.component';
 import { HomePrecadastroComponent } from './public/home-precadastro/home-precadastro.component';
+import { PostosAtendimentoComponent } from './private/auth/postos-atendimento/postos-atendimento.component';
+import { AlterarSenhaComponent } from './private/auth/alterar-senha/alterar-senha.component';
+import { MinhasInformacoesComponent } from './private/auth/minhas-informacoes/minhas-informacoes.component';
+import { PacienteCaixaDeFerramentasComponent } from './private/paciente/paciente-caixa-de-ferramentas/paciente-caixa-de-ferramentas.component';
 
 /*******************************
  * Services
  *******************************/
+import { LoginGuardService } from './guards/login-guard.service';
 import { HomeGuardService } from './guards/home-guard.service';
 
 /*******************************
@@ -43,9 +46,6 @@ import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { FormsModule } from '@angular/forms';
-import { PostosAtendimentoComponent } from './private/auth/postos-atendimento/postos-atendimento.component';
-import { AlterarSenhaComponent } from './private/auth/alterar-senha/alterar-senha.component';
-import { MinhasInformacoesComponent } from './private/auth/minhas-informacoes/minhas-informacoes.component';
 
 firebase.initializeApp(environment.firebase);
 
