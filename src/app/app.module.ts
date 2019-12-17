@@ -19,6 +19,8 @@ import { LoginComponent } from './public/login/login.component';
 import { AgendaMedicaComponent } from './private/paciente/agenda-medica/agenda-medica.component';
 import { PrescritorHomeComponent } from './private/prescritor/prescritor-home/prescritor-home.component';
 import { AdministradorHomeComponent } from './private/administrador/administrador-home/administrador-home.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { CadastroFinalComponent } from './private/auth/cadastro-final/cadastro-final.component';
 import { RootHomeComponent } from './private/root/root-home/root-home.component';
 import { PacienteHomeComponent } from './private/paciente/paciente-home/paciente-home.component';
 import { GroupsHomeComponent } from './private/groups/groups-home/groups-home.component';
@@ -67,7 +69,9 @@ firebase.initializeApp(environment.firebase);
     PacienteCaixaDeFerramentasComponent,
     PostosAtendimentoComponent,
     AlterarSenhaComponent,
-    MinhasInformacoesComponent
+    MinhasInformacoesComponent,
+    SideMenuComponent,
+    CadastroFinalComponent
 
   ],
   entryComponents: [],

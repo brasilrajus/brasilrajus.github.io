@@ -555,6 +555,13 @@
   dependencies:
     "@types/cordova" latest
 
+"@ionic-native/local-notifications@^5.17.1":
+  version "5.18.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/local-notifications/-/local-notifications-5.18.0.tgz#d5dc7a4a4122042121485a6e289747f3e8be7ffb"
+  integrity sha512-ieyzK2+7x5uviW8Crb3OnzU/m75W/5lYtJsEZc8B4+cU4PygHSTJG+BiuYjnkBrULN74WSOOnOJfFaObbYEIKw==
+  dependencies:
+    "@types/cordova" latest
+
 "@ionic-native/splash-screen@^5.0.0":
   version "5.17.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-5.17.0.tgz#6e9a244c0dad7ee93d113794f16808892bae6473"

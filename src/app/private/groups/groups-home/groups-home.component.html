@@ -10,12 +10,16 @@
         ambiente</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content>
-      <ion-button expand="block" class="ion-margin-bottom" routerLink="/administrador" *ngIf="this.auth.userData.user.perfil.indexOf('administrador') >= 0">Administrador</ion-button>
-      <ion-button expand="block" class="ion-margin-bottom" routerLink="/paciente" *ngIf="this.auth.userData.user.perfil.indexOf('paciente') >= 0">Paciente</ion-button>
-      <ion-button expand="block" class="ion-margin-bottom" routerLink="/prescritor" *ngIf="this.auth.userData.user.perfil.indexOf('prescritor') >= 0">Prescritor</ion-button>
-      <ion-button expand="block" class="ion-margin-bottom" routerLink="/root" *ngIf="this.auth.userData.user.perfil.indexOf('root') >= 0">Root</ion-button>
-    </ion-card-content>
+    <!-- <ion-card-content>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/administrador"
+        *ngIf="this.auth.userData.user.perfil.indexOf('administrador') >= 0">Administrador</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/paciente"
+        *ngIf="this.auth.userData.user.perfil.indexOf('paciente') >= 0">Paciente</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/prescritor"
+        *ngIf="this.auth.userData.user.perfil.indexOf('prescritor') >= 0">Prescritor</ion-button>
+      <ion-button expand="block" class="ion-margin-bottom" routerLink="/root"
+        *ngIf="this.auth.userData.user.perfil.indexOf('root') >= 0">Root</ion-button>
+    </ion-card-content> -->
 
   </ion-card>
 

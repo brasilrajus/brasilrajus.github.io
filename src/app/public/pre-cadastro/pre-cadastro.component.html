@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-title>Rajus Alagoas</ion-title>
     <ion-buttons slot="end">
-      <ion-back-button></ion-back-button>
+      <ion-icon slot="icon-only" name="log-out" (click)="logout()"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -23,8 +23,8 @@
 
     <ion-item class="bg_none" lines="none">
       <ion-input type="text" placeholder="Email" [(ngModel)]="user.email"
-        name="user.email" required (keypress)="formatarEmail()">
-        <ion-icon name="business" color="light" [ngClass]="user.emailValidator"></ion-icon>
+        name="user.email" disabled>
+        <ion-icon name="business" color="light" class="validate_true"></ion-icon>
       </ion-input>
     </ion-item>
 

@@ -1,3 +1,4 @@
+import { PushNotificationsService } from './../../../services/push-notifications.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private notification: PushNotificationsService
+  ) { }
 
   ngOnInit() {}
 
+
+  push () {
+    this.notification.webNotification();
+  }
 }

@@ -1,3 +1,4 @@
+import { CadastroFinalComponent } from './private/auth/cadastro-final/cadastro-final.component';
 import { PacienteCaixaDeFerramentasComponent } from './private/paciente/paciente-caixa-de-ferramentas/paciente-caixa-de-ferramentas.component';
 import { HomeGuardService } from './guards/home-guard.service';
 import { PacienteGuardsService } from './guards/paciente-guards.service';
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'alterar-senha', component: AlterarSenhaComponent},
   { path: 'minhas-informacoes', component: MinhasInformacoesComponent},
   { path: 'postos-atendimento', component: PostosAtendimentoComponent},
+  { path: 'cadastro', component: CadastroFinalComponent},
   
   /* Groups */
   { path: 'home', component: GroupsHomeComponent, canActivate: [HomeGuardService]},

@@ -1,6 +1,6 @@
+import { PushNotificationsService } from './../../../services/push-notifications.service';
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-groups-home',
@@ -10,7 +10,8 @@ import * as firebase from 'firebase/app';
 export class GroupsHomeComponent implements OnInit {
 
   constructor(
-    public auth: AuthService
+    public auth: AuthService,
+    private push: PushNotificationsService
   ) { }
 
   ngOnInit() { }

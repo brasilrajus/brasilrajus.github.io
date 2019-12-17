@@ -16,7 +16,7 @@ export class AuthService {
     user: {}
   };
   public uid: string = '';
-  public userData: any = { user: { perfil: [] } };
+  public userData: any
 
   constructor(
     private afs: AngularFirestore,
@@ -35,22 +35,12 @@ export class AuthService {
       .subscribe(result => {
         this.uid = user;
         this.userData = result;
-
-        console.log(this.userData)
-
-        firebase.firestore().collection('users').doc(this.uid).get()
-          .then((res) => {
-            let status = res.data().user.status;
-            status === 'pré cadastrado' ? this.route.navigate(['/home-pre-cadastro']) : this.toast.toastShow('Seja bem vindo ao Rajus Brasil', 'toast_green');
-          })
-          .catch((err) => {
-            this.route.navigate(['/pre-cadastro'])
-          })
       });
 
   };
 
   ifDisconnected() {
+    this.userData = undefined;
   };
 
 
@@ -85,7 +75,14 @@ export class AuthService {
     let provider = new firebase.auth.GoogleAuthProvider();
     this.auth.signInWithPopup(provider)
       .then((result) => {
-        let user = result.user;
+        let user:any= {}
+        user.displayName = result.user.displayName;
+
+        this.afs.collection('users/').doc(result.user.uid).set({
+          user: {
+            displayName: result.user.displayName
+          } 
+        }, {merge: true})
       })
       .catch((err) => { console.log('Error:', err) });
   };
@@ -93,7 +90,7 @@ export class AuthService {
   registerUser(email: string, password: string) {
     this.auth.createUserWithEmailAndPassword(email, password)
       .then(() => {
-        console.log('usuário registrado com sucesso')
+        this.toast.toastShow('Bem vindo ao Rajus Brasil, por gentileza, preencha seu cadastro.', 'toast_green');
       })
       .catch(err => {
         let errorCode = err.code;
@@ -116,23 +113,28 @@ export class AuthService {
 
     delete user.nomeValidator;
     delete user.cpfValidator;
-    delete user.emailValidator;
     delete user.telefoneValidator;
     delete user.susValidator;
-
+    user.status = 'pré cadastrado';
     user.cpf = user.cpf.replace(/\D/g, '');
     user.sus = user.sus.replace(/\D/g, '');
     user.telefone = user.telefone.replace(/\D/g, '');
-    user.status = 'pré cadastrado';
     user.uid = this.uid;
     this.load.loadingGreen('Adicionando paciente')
 
     this.afs.collection('users').doc(this.uid + '/').set({
-      user
-    })
+      user: {
+        status: user.status,
+        cpf: user.cpf,
+        sus: user.sus,
+        telefone: user.telefone,
+        nome: user.nome,
+      }
+    }, {merge: true})
       .then(() => {
         this.loadCtrl.dismiss();
         this.toast.toastShow('Pré cadastro efetuado com sucesso', 'toast_green');
+        this.route.navigate(['/home-pre-cadastro'])
       })
       .catch((err) => {
         this.loadCtrl.dismiss();
@@ -151,7 +153,8 @@ export class AuthService {
 
   ativarPaciente() {
     let user = this.PacienteAtivo.user;
-    user.status = 'ativado'
+    user.status = 'ativado';
+    user.perfil = ['paciente'];
     firebase.firestore().collection('users').doc(this.PacienteAtivo.user.uid).update({
       user
     })

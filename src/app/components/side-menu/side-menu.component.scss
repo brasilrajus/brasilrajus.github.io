@@ -1,0 +1,29 @@
+ion-avatar {
+    height: 70px;
+    width: 70px;
+}
+.wrapper {
+    ion-card {
+        margin: 0 4.5%;
+        width: 24%;
+    }
+}
+.side-menu {
+    background: url('../../../assets/imgs/bg_side_menu.jpeg');
+}
+.ferramentas {
+    ion-button:nth-child(1) {
+        margin-top: 10px;
+    }
+}
+
+.cadastro {
+    width: 95%;
+    height: 5px;
+    margin: 0 5px;
+    margin-bottom: 7px;
+}
+
+.cadastro-15 {background-image: linear-gradient(to right, green 0%, green 14%, red 15%, red);}
+.cadastro-45 {background-image: linear-gradient(to right, green 0%, green 44%, red 45%, red);}
+.cadastro-100 {display: none;}

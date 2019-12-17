@@ -1,0 +1,64 @@
+<div class="side-menu">
+
+  <ion-item lines="none" class="bg_none">
+    <ion-avatar class="ion-margin-end">
+      <img src="../../../assets/imgs/avatar.jpeg">
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+      <h3 class="color" *ngIf="auth.userData.user.nome">{{auth.userData.user.nome}}</h3>
+      <div *ngIf="auth.userData.user.informacoesPessoais">
+        <p>Idade: {{auth.userData.user.informacoesPessoais.idade}}</p>
+        <p>Peso: {{auth.userData.user.informacoesPessoais.peso}}</p>
+        <p>Data de nasc: {{auth.userData.user.informacoesPessoais.dataNascimento}}</p>
+      </div>
+    </ion-label>
+  </ion-item>
+
+  <div class="cadastro"
+    [ngClass]="{'cadastro-100': auth.userData.user.informacoesMedicas && auth.userData.user.informacoesPessoais, 'cadastro-45': auth.userData.user.informacoesPessoais !== undefined && auth.userData.user.informacoesMedicas === undefined, 'cadastro-15': auth.userData.user.informacoesMedicas === undefined && auth.userData.user.informacoesPessoais === undefined}">
+  </div>
+  <ion-label class="ion-text-center pointer" routerLink="/cadastro">
+    <p
+      *ngIf="auth.userData.user.informacoesMedicas === undefined && auth.userData.user.informacoesPessoais === undefined">
+      Seu cadastro está 15% completo</p>
+    <p
+      *ngIf="auth.userData.user.informacoesMedicas === undefined && auth.userData.user.informacoesPessoais !== undefined">
+      Seu cadastro está 45% completo</p>
+    <p
+      *ngIf="auth.userData.user.informacoesMedicas === undefined || auth.userData.user.informacoesPessoais === undefined">
+      Clique aqui para continuar o cadastro.</p>
+  </ion-label>
+
+  <ion-row class="ion-margin">
+    <ion-label>
+      <h3 class="color">Informações médicas</h3>
+      <ion-label *ngIf="auth.userData.user.informacoesMedicas">
+        <p>Tipo sanguíneo: {{auth.userData.user.informacoesMedicas.tipoSanguineo}}</p>
+        <p>Nível de glicose: {{auth.userData.user.informacoesMedicas.nivelGlicose}}</p>
+        <p>IMC: {{auth.userData.user.informacoesMedicas.imc}}</p>
+        <p>Alergias: {{auth.userData.user.informacoesMedicas.alergias}}</p>
+        <p>Marca passo: {{auth.userData.user.informacoesMedicas.marcaPasso}}</p>
+        <p>Telefone para emergências: {{auth.userData.user.informacoesMedicas.telefoneEmergencial}}</p>
+      </ion-label>
+    </ion-label>
+  </ion-row>
+
+  <ion-row class="wrapper">
+    <ion-card class="shadow_none" (click)="navTo('postos-atendimento')">
+      <img src="../../../assets/icons/pharmacy.svg">
+    </ion-card>
+    <ion-card class="shadow_none" (click)="navTo('caixa-ferramentas')">
+      <img src="../../../assets/icons/first-aid-box.svg">
+    </ion-card>
+    <ion-card class="shadow_none" (click)="navTo('agenda-medica')">
+      <img src="../../../assets/icons/calendar.svg">
+    </ion-card>
+  </ion-row>
+
+  <div class="ferramentas">
+    <ion-button class="padding-none" expand="block" *ngFor="let ferramenta of ferramentas">
+      {{ferramenta.nome}}
+    </ion-button>
+  </div>
+</div>

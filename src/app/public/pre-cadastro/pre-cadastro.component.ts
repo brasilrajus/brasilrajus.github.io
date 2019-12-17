@@ -2,6 +2,8 @@ import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ValidatorsService } from 'src/app/services/validators.service';
 import { ToastService } from 'src/app/services/toast.service';
+import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-pre-cadastro',
@@ -13,7 +15,6 @@ export class PreCadastroComponent implements OnInit {
   
   public user: any = {
     nomeValidator: 'validate_base',
-    emailValidator: 'validate_base',
     cpfValidator: 'validate_base',
     telefoneValidator: 'validate_base',
     susValidator: 'validate_base',
@@ -23,13 +24,16 @@ export class PreCadastroComponent implements OnInit {
     private validator: ValidatorsService,
     private auth: AuthService,
     private toast: ToastService
-  ) { }
+  ) {
+    let user = firebase.auth().currentUser;
+    this.user.email = user.email;
+   }
 
   ngOnInit() { }
 
   adicionar() {
+    console.log('teste');
     this.user.nomeValidator == 'validate_true' &&
-      this.user.emailValidator == 'validate_true' &&
       this.user.cpfValidator == 'validate_true' &&
       this.user.telefoneValidator == 'validate_true' &&
       this.user.susValidator == 'validate_true' ?
@@ -43,7 +47,6 @@ export class PreCadastroComponent implements OnInit {
       nomeValidator: 'validate_base',
       cpfValidator: 'validate_base',
       telefoneValidator: 'validate_base',
-      emailValidator: 'validate_base',
       susValidator: 'validate_base'
     };
   }
@@ -62,20 +65,18 @@ export class PreCadastroComponent implements OnInit {
     this.validator.validarCPF(cpf) ? this.user.cpfValidator = 'validate_true' : this.user.cpfValidator = 'validate_false';
   }
 
-  formatarEmail() {
-    this.validator.validarEmail(this.user.email) === true? this.user.emailValidator = 'validate_true' : this.user.emailValidator = 'validate_false'
-  }
-
   formatarTelefone() {
     this.user.telefone = this.validator.formatarTelefone(this.user.telefone);
-    console.log(this.user.telefone.length)
     this.user.telefone.length >= 15 ? this.user.telefoneValidator = 'validate_true': this.user.telefoneValidator = 'validate_false'
   }
 
   formatarSus() {
     this.user.sus = this.validator.formatarCartaoSus(this.user.sus);
-    console.log(this.user.sus.length)
     this.user.sus.length >= 18 ? this.user.susValidator = 'validate_true' : this.user.susValidator = 'validate_false';
+  }
+
+  logout() {
+    this.auth.signOut();
   }
 
 }
